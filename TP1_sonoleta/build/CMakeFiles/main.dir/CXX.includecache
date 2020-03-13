@@ -6,9 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/alexis/Documents/CPP/TP1_sonoleta/main.cpp
-src/Dvector.h
+/home/alexis/Documents/CPP/TP1_sonoleta/src/Dvector.cpp
+Dvector.h
 /home/alexis/Documents/CPP/TP1_sonoleta/src/Dvector.h
+fstream
+-
 
 /home/alexis/Documents/CPP/TP1_sonoleta/src/Dvector.h
 iostream

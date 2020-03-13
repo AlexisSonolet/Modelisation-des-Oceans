@@ -25,23 +25,19 @@ Dvector::Dvector(Dvector const& vect)
 
 Dvector::Dvector(std::string fichier)
 {
-
-    // Lit le fichier dans string
     std::ifstream flux(fichier);
+    double n; // cast en double de la ligne courante
     int vect_size = 0;
     if(flux)
     {
-        std::string ligne; //Une variable pour stocker les lignes lues
+        std::string ligne;
         while(getline(flux, ligne)) //Tant qu'on n'est pas à la fin, on lit
         {
-            double n;
             try {
                 n = std::stod(ligne);
                 vect_size++;
             }
-            catch(...) {
-                // TODO : éviter les "..." => trouver la bonne erreur
-            }
+            catch(...) {/* TODO : éviter les "..." => trouver la bonne erreur */ }
         }
     }
     else
@@ -50,28 +46,21 @@ Dvector::Dvector(std::string fichier)
         v_size = 0;
         return;
     }
+    flux.clear(); flux.seekg(0, flux.beg); // Réinitialiser la lecture du flux
+    
     v = new double[vect_size];
     v_size = vect_size;
-
-    flux.clear();
-    flux.seekg(0, flux.beg);
-    
+    // On remplit le vecteur
     int i = 0;
-    if(flux)
+    std::string ligne;
+    while(getline(flux, ligne)) //Tant qu'on n'est pas à la fin, on lit
     {
-        std::string ligne; //Une variable pour stocker les lignes lues
-        while(getline(flux, ligne)) //Tant qu'on n'est pas à la fin, on lit
-        {
-            double n;
-            try {
-                n = std::stod(ligne);
-                v[i] = n;
-                i++;
-            }
-            catch(...) {
-                // TODO : éviter les "..." => trouver la bonne erreur
-            }
+        try {
+            n = std::stod(ligne);
+            v[i] = n;
+            i++;
         }
+        catch(...) {/* TODO : éviter les "..." => trouver la bonne erreur */ }
     }
 }
 
