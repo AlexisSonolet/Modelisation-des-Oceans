@@ -34,9 +34,9 @@ Dvector::Dvector(std::string fichier)
         std::string ligne; //Une variable pour stocker les lignes lues
         while(getline(flux, ligne)) //Tant qu'on n'est pas à la fin, on lit
         {
-            int n;
+            double n;
             try {
-                n = std::stoi(ligne);
+                n = std::stod(ligne);
                 vect_size++;
             }
             catch(...) {
@@ -62,11 +62,11 @@ Dvector::Dvector(std::string fichier)
         std::string ligne; //Une variable pour stocker les lignes lues
         while(getline(flux, ligne)) //Tant qu'on n'est pas à la fin, on lit
         {
-            int n;
+            double n;
             try {
-                n = std::stoi(ligne);
-                i++;
+                n = std::stod(ligne);
                 v[i] = n;
+                i++;
             }
             catch(...) {
                 // TODO : éviter les "..." => trouver la bonne erreur
@@ -83,8 +83,7 @@ Dvector::~Dvector()
 void Dvector::display(std::ostream& str)
 {
     for (long unsigned int i = 0; i< v_size; i++) {
-        str << v[i];
-        str << "/n";
+        str << v[i] << std::endl;
     }
 };
 
@@ -97,6 +96,6 @@ void Dvector::fillRandomly()
 {
     for(long unsigned int i = 0; i<v_size; i++) {
         // fill with random
-        v[i] = rand();
+        v[i] = (double) rand() / RAND_MAX;
     }
 };

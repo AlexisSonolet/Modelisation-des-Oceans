@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/alexis/Documents/CPP/TP1_sonoleta/src/Dvector.cpp
+Dvector.h
+/home/alexis/Documents/CPP/TP1_sonoleta/src/Dvector.h
+fstream
+-
+
+/home/alexis/Documents/CPP/TP1_sonoleta/src/Dvector.h
+iostream
+-
+

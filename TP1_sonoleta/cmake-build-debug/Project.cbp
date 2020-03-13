@@ -8,37 +8,37 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/user/4/sonoleta/Desktop/CPP/TP1_sonoleta/cmake-build-debug"/>
+				<Option working_dir="/home/alexis/Documents/CPP/TP1_sonoleta/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/opt/rh/devtoolset-8/root/usr/bin/gmake -j4 -f &quot;/user/4/sonoleta/Desktop/CPP/TP1_sonoleta/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/opt/rh/devtoolset-8/root/usr/bin/gmake -j4 -f &quot;/user/4/sonoleta/Desktop/CPP/TP1_sonoleta/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/opt/rh/devtoolset-8/root/usr/bin/gmake -j4 -f &quot;/user/4/sonoleta/Desktop/CPP/TP1_sonoleta/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/opt/rh/devtoolset-8/root/usr/bin/gmake -j4 -f &quot;/user/4/sonoleta/Desktop/CPP/TP1_sonoleta/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/alexis/Documents/CPP/TP1_sonoleta/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/alexis/Documents/CPP/TP1_sonoleta/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/alexis/Documents/CPP/TP1_sonoleta/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/alexis/Documents/CPP/TP1_sonoleta/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/user/4/sonoleta/Desktop/CPP/TP1_sonoleta/cmake-build-debug"/>
+				<Option working_dir="/home/alexis/Documents/CPP/TP1_sonoleta/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/opt/rh/devtoolset-8/root/usr/bin/gmake -j4 -f &quot;/user/4/sonoleta/Desktop/CPP/TP1_sonoleta/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/opt/rh/devtoolset-8/root/usr/bin/gmake -j4 -f &quot;/user/4/sonoleta/Desktop/CPP/TP1_sonoleta/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/opt/rh/devtoolset-8/root/usr/bin/gmake -j4 -f &quot;/user/4/sonoleta/Desktop/CPP/TP1_sonoleta/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/opt/rh/devtoolset-8/root/usr/bin/gmake -j4 -f &quot;/user/4/sonoleta/Desktop/CPP/TP1_sonoleta/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/alexis/Documents/CPP/TP1_sonoleta/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/alexis/Documents/CPP/TP1_sonoleta/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/alexis/Documents/CPP/TP1_sonoleta/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/alexis/Documents/CPP/TP1_sonoleta/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/user/4/sonoleta/Desktop/CPP/TP1_sonoleta/cmake-build-debug"/>
+				<Option working_dir="/home/alexis/Documents/CPP/TP1_sonoleta/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/opt/rh/devtoolset-8/root/usr/bin/gmake -j4 -f &quot;/user/4/sonoleta/Desktop/CPP/TP1_sonoleta/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/opt/rh/devtoolset-8/root/usr/bin/gmake -j4 -f &quot;/user/4/sonoleta/Desktop/CPP/TP1_sonoleta/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/opt/rh/devtoolset-8/root/usr/bin/gmake -j4 -f &quot;/user/4/sonoleta/Desktop/CPP/TP1_sonoleta/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/opt/rh/devtoolset-8/root/usr/bin/gmake -j4 -f &quot;/user/4/sonoleta/Desktop/CPP/TP1_sonoleta/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/alexis/Documents/CPP/TP1_sonoleta/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/alexis/Documents/CPP/TP1_sonoleta/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/alexis/Documents/CPP/TP1_sonoleta/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/alexis/Documents/CPP/TP1_sonoleta/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/user/4/sonoleta/Desktop/CPP/TP1_sonoleta/CMakeLists.txt">
+		<Unit filename="/home/alexis/Documents/CPP/TP1_sonoleta/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
