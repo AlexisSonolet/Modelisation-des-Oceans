@@ -13,6 +13,35 @@ int main() {
     cout << v1.get(3 - 1) << endl;
 
     cout << "--- Q2 ---" << endl;
+    Dvector v2;
+    v2 = v1;
+    v2.display(cout);
+    Dvector v3(2, 5);
+    v3 = v1;
+    v3.display(cout);
+
+    cout << "--- Q3 ---" << endl;
+    cout << "v1 += v1" << endl;
+    v1 += v1;
+    v1.display(cout);
+    cout << "v2 -= v2" << endl;
+    v2 -= v2;
+    v2.display(cout);
     
+    cout << "--- Q4 ---" << endl;
+    Dvector v4, v5, v6;
+    cout << "v4 = v1 + 1" << endl;
+    v4 = v1+1;
+    v4.display(cout);
+    cout << "v5 = v4 * 10" << endl;
+    v5 = v4*10;
+    v5.display(cout);
+    cout << "v6 = v5 - v4" << endl;
+    v6 = v5 - v4;
+    v6.display(cout);
+    cout << "v5 = -v6" << endl;
+    v5 = -v6;
+    v5.display(cout);
+
     return 0;
 }

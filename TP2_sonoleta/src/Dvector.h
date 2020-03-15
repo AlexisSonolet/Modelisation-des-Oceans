@@ -14,7 +14,20 @@ class Dvector
         int size();
         void fillRandomly();
         double get(int index);
-    
+        void set(int index, double value);
+        Dvector operator=(const Dvector &vect);
+        Dvector operator+=(Dvector &vect);
+        Dvector operator-=(Dvector &vect);
+        Dvector operator*=(int i);
+        Dvector operator/=(int i);
+        Dvector operator+(int i);
+        Dvector operator-(int i);
+        Dvector operator*(int i);
+        Dvector operator/(int i);
+        Dvector operator+(Dvector &vect);
+        Dvector operator-(Dvector &vect);
+        Dvector operator-();
+
     private:
         double* v;
         int v_size;

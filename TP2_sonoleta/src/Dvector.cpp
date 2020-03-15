@@ -1,5 +1,7 @@
 #include "Dvector.h"
 #include <fstream>
+#include <string.h>
+#include <stdlib.h>
 
 Dvector::Dvector()
 {
@@ -97,4 +99,138 @@ double Dvector::get(int index)
     } else {
         return v[index];
     }
+}
+
+void Dvector::set(int index, double value)
+{
+    if (index >= v_size) {
+        throw std::string("Error : cannot access to an index above the size of the vector");
+    }
+
+    v[index] = value;
+}
+
+Dvector Dvector::operator=(const Dvector &vect)
+{
+    // Si le vecteur a déjà été assigné, il faut le libérer
+    delete[] v;
+    v_size = vect.v_size;
+    v = new double[v_size];
+    memcpy(v, vect.v, v_size * sizeof(double));
+
+    return *this;
+}
+
+Dvector Dvector::operator+=(Dvector &vect)
+{
+    if (v_size != vect.v_size) {
+        throw std::string("Error : vectors of different sizes");
+    }
+    for (int index = 0; index<v_size; index++) {
+        v[index] += vect.get(index);
+    }
+    return *this;
+}
+
+Dvector Dvector::operator-=(Dvector &vect)
+{
+    if (v_size != vect.v_size) {
+        throw std::string("Error : vectors of different sizes");
+    }
+    for (int index = 0; index<v_size; index++) {
+        v[index] -= vect.get(index);
+    }
+    return *this;
+}
+
+Dvector Dvector::operator*=(int i)
+{
+    for (int index = 0; index<v_size; index++) {
+        v[index] *= i;
+    }
+    return *this;
+}
+
+Dvector Dvector::operator/=(int i)
+{
+    if (i == 0) {
+        throw std::string("NullDivisionError : cannot divide by 0");
+    }
+    for (int index = 0; index<v_size; index++) {
+        v[index] /= i;
+    }
+    return *this;
+}
+
+Dvector Dvector::operator+(int i)
+{
+    Dvector vect(v_size);
+    for (int index = 0; index<v_size; index++) {
+        vect.set(index, v[index] + (double) i);
+    }
+    return vect;
+}
+
+Dvector Dvector::operator-(int i)
+{
+    Dvector vect(v_size);
+    for (int index = 0; index<v_size; index++) {
+        vect.set(index, v[index] - (double) i);
+    }
+    return vect;
+}
+
+Dvector Dvector::operator*(int i)
+{
+    Dvector vect(v_size);
+    for (int index = 0; index<v_size; index++) {
+        vect.set(index, v[index] * i);
+    }
+    return vect;
+}
+
+Dvector Dvector::operator/(int i)
+{
+    if (i == 0) {
+        throw std::string("NullDivisionError : cannot divide by 0");
+    }
+
+    Dvector vect(v_size);
+    for (int index = 0; index<v_size; index++) {
+        vect.set(index, v[index] / i);
+    }
+    return vect;
+}
+
+Dvector Dvector::operator+(Dvector &vect)
+{
+    if (vect.v_size != v_size) {
+        throw std::string("Error : size doesn't match");
+    }
+    Dvector vector(v_size);
+    for (int index = 0; index<v_size; index++) {
+        vector.set(index, v[index] + vect.get(index));
+    }
+    return vector;
+}
+
+Dvector Dvector::operator-(Dvector &vect)
+{
+    if (vect.v_size != v_size) {
+        throw std::string("Error : size doesn't match");
+    }
+    Dvector vector(v_size);
+    for (int index = 0; index<v_size; index++) {
+        vector.set(index, v[index] - vect.get(index));
+    }
+    return vector;
+}
+
+Dvector Dvector::operator-()
+{
+    Dvector vector(v_size);
+    for (int index = 0; index<v_size; index++) {
+        vector.set(index, -v[index]);
+    }
+    return vector;
 }

@@ -6,6 +6,16 @@
 
 #IncludeRegexTransform: 
 
+/home/alexis/Documents/CPP/TP2_sonoleta/src/Dvector.cpp
+Dvector.h
+/home/alexis/Documents/CPP/TP2_sonoleta/src/Dvector.h
+fstream
+-
+string.h
+-
+stdlib.h
+-
+
 /home/alexis/Documents/CPP/TP2_sonoleta/src/Dvector.h
 iostream
 -
