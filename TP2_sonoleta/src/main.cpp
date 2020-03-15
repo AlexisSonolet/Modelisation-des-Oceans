@@ -42,6 +42,11 @@ int main() {
     cout << "v5 = -v6" << endl;
     v5 = -v6;
     v5.display(cout);
+    /* Erreurs
+    Dvector aa(2, 5), bb(3, 7), cc;
+    cc = aa + bb;
+    cc.display(cout);
+    */
 
     return 0;
 }
