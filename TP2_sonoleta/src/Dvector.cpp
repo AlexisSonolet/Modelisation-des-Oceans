@@ -1,7 +1,10 @@
 #include "Dvector.h"
 #include <fstream>
+#include <ostream>
+#include <istream>
 #include <string.h>
 #include <stdlib.h>
+#include <sstream>
 
 Dvector::Dvector()
 {
@@ -78,7 +81,7 @@ void Dvector::display(std::ostream& str)
     }
 };
 
-int Dvector::size()
+int Dvector::size() const
 {
     return v_size;
 };
@@ -91,7 +94,7 @@ void Dvector::fillRandomly()
     }
 };
 
-double Dvector::get(int index)
+double Dvector::get(int index) const
 {
     if (index >= v_size) {
         throw std::string("Error : cannot access to an index above the size of the vector");
@@ -110,6 +113,21 @@ void Dvector::set(int index, double value)
     v[index] = value;
 }
 
+void Dvector::set_size(int size)
+{
+    v_size = size;
+}
+
+void Dvector::set_v(double* vect)
+{
+    v = vect;
+}
+
+double* Dvector::get_v() const
+{
+    return v;
+}
+
 Dvector Dvector::operator=(const Dvector &vect)
 {
     // Si le vecteur a déjà été assigné, il faut le libérer
@@ -121,7 +139,7 @@ Dvector Dvector::operator=(const Dvector &vect)
     return *this;
 }
 
-Dvector Dvector::operator+=(Dvector &vect)
+Dvector Dvector::operator+=(const Dvector &vect)
 {
     if (v_size != vect.v_size) {
         throw std::string("Error : vectors of different sizes");
@@ -132,7 +150,7 @@ Dvector Dvector::operator+=(Dvector &vect)
     return *this;
 }
 
-Dvector Dvector::operator-=(Dvector &vect)
+Dvector Dvector::operator-=(const Dvector &vect)
 {
     if (v_size != vect.v_size) {
         throw std::string("Error : vectors of different sizes");
@@ -233,4 +251,63 @@ Dvector Dvector::operator-()
         vector.set(index, -v[index]);
     }
     return vector;
+}
+
+std::ostream& operator<<(std::ostream& out, const Dvector& v)
+{
+    for (long unsigned int i = 0; i<v.size() ; i++) {
+        out << v.get(i) << std::endl;
+    }
+    return out;
+}
+
+std::istream& operator>>(std::istream& in, Dvector& v)
+{
+    int index = 0; // taille de vect
+
+    std::string input;
+    double n;
+    while (getline(std::cin, input) && !input.empty()) {
+        try {
+            std::stringstream ss(input);
+            ss >> n;
+            v.set(index, n);
+            index++;
+        }
+        catch(...) {/* TODO : éviter les "..." => trouver la bonne erreur */}
+    }
+
+    return in;
+}
+
+bool Dvector::operator==(const Dvector &vect)
+{
+    for (int index = 0; index<vect.size(); index++) {
+        if (vect.get(index) != v[index]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+void Dvector::resize(int size, double* vect)
+{
+    // On redimensionne le vecteur
+    if (size > v_size) {
+        double* new_zone;
+        new_zone = new double[size];
+        new_zone = (double*) memcpy(new_zone, v, sizeof(double) * size);
+        delete[] v;
+        v = new_zone;
+    }
+    // On remplit le vecteur
+    int index = 0;
+    if (vect != 0) {
+        while (index+v_size < size) {
+            v[index + v_size] = vect[index];
+            index++;
+        }
+    }
+    v_size = size;
+
 }
