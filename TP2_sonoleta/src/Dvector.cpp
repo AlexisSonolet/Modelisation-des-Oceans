@@ -296,13 +296,13 @@ void Dvector::resize(int size, double* vect)
     if (size > v_size) {
         double* new_zone;
         new_zone = new double[size];
-        new_zone = (double*) memcpy(new_zone, v, sizeof(double) * size);
+        new_zone = (double*) memcpy(new_zone, v, sizeof(double) * v_size);
         delete[] v;
         v = new_zone;
     }
     // On remplit le vecteur
     int index = 0;
-    if (vect != 0) {
+    if (vect != 0 && size > v_size) {
         while (index+v_size < size) {
             v[index + v_size] = vect[index];
             index++;
