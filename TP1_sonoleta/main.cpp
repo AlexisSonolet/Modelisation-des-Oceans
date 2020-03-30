@@ -37,10 +37,10 @@ int main()
     stop("test1");
     Dvector v4("./../test/tp1_test1.txt");
     v4.display(std::cout);
-    stop("fichier inexistant");
+    stop("test de fichier inexistant");
     Dvector v5("./../test/tp1_test0.txt");
     v5.display(std::cout);
-    std::cout << "taille : ";
+    std::cout << "taille de v5: ";
     std::cout << v5.size() << std::endl;
 
     return 0;

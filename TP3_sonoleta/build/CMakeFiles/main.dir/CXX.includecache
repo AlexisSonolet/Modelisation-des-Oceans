@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/alexis/Documents/CPP/TP3_sonoleta/headers/Height.h
+
+/home/alexis/Documents/CPP/TP3_sonoleta/src/Height.cpp
+cstring
+-
+iostream
+-
+stdlib.h
+-
+string
+-
+fstream
+-
+./../headers/Height.h
+/home/alexis/Documents/CPP/TP3_sonoleta/headers/Height.h
+
