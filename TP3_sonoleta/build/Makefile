@@ -177,6 +177,33 @@ src/Height.cpp.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Height.cpp.s
 .PHONY : src/Height.cpp.s
 
+src/WaveModel.o: src/WaveModel.cpp.o
+
+.PHONY : src/WaveModel.o
+
+# target to build an object file
+src/WaveModel.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/WaveModel.cpp.o
+.PHONY : src/WaveModel.cpp.o
+
+src/WaveModel.i: src/WaveModel.cpp.i
+
+.PHONY : src/WaveModel.i
+
+# target to preprocess a source file
+src/WaveModel.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/WaveModel.cpp.i
+.PHONY : src/WaveModel.cpp.i
+
+src/WaveModel.s: src/WaveModel.cpp.s
+
+.PHONY : src/WaveModel.s
+
+# target to generate assembly for a file
+src/WaveModel.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/WaveModel.cpp.s
+.PHONY : src/WaveModel.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -219,6 +246,9 @@ help:
 	@echo "... src/Height.o"
 	@echo "... src/Height.i"
 	@echo "... src/Height.s"
+	@echo "... src/WaveModel.o"
+	@echo "... src/WaveModel.i"
+	@echo "... src/WaveModel.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

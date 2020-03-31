@@ -169,6 +169,17 @@ Dvector Dvector::operator*=(int i)
     return *this;
 }
 
+Dvector Dvector::operator*=(const Dvector &vect)
+{
+    if (v_size != vect.v_size) {
+        throw std::string("Error : vectors of different sizes");
+    }
+    for (int index = 0; index<v_size; index++) {
+        v[index] *= vect.v[index];
+    }
+    return *this;
+}
+
 Dvector Dvector::operator/=(int i)
 {
     if (i == 0) {
@@ -205,6 +216,18 @@ Dvector Dvector::operator*(int i)
         vect.set(index, v[index] * i);
     }
     return vect;
+}
+
+Dvector Dvector::operator*(const Dvector &vector)
+{
+    if (v_size != vector.v_size) {
+        throw std::string("Error : vectors of different sizes");
+    }
+    Dvector vect(v_size);
+    for (int index = 0; index<v_size; index++) {
+        vect.set(index, v[index] * vector.v[index]);
+    }
+    return *this;
 }
 
 Dvector Dvector::operator/(int i)

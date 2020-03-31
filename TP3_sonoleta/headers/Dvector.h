@@ -22,10 +22,12 @@ class Dvector
         Dvector operator+=(const Dvector &vect);
         Dvector operator-=(const Dvector &vect);
         Dvector operator*=(int i);
+        Dvector operator*=(const Dvector &vect);
         Dvector operator/=(int i);
         Dvector operator+(int i);
         Dvector operator-(int i);
         Dvector operator*(int i);
+        Dvector operator*(const Dvector &vect);
         Dvector operator/(int i);
         Dvector operator+(Dvector &vect);
         Dvector operator-(Dvector &vect);

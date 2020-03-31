@@ -22,5 +22,8 @@ int main() {
 
     // Question 2 : WaveModel
     cout << "Classe WaveModel" << endl;
+
+    // Question 3 : Gerstner
+    cout << "Classe GerstnerWave" << endl;
     return 0;
 }

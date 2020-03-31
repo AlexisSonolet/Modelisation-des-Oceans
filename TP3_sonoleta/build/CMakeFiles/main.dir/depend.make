@@ -7,6 +7,10 @@ CMakeFiles/main.dir/src/Dvector.cpp.o: ../src/Dvector.cpp
 CMakeFiles/main.dir/src/Height.cpp.o: ../headers/Height.h
 CMakeFiles/main.dir/src/Height.cpp.o: ../src/Height.cpp
 
+CMakeFiles/main.dir/src/WaveModel.cpp.o: ../headers/Dvector.h
+CMakeFiles/main.dir/src/WaveModel.cpp.o: ../headers/WaveModel.h
+CMakeFiles/main.dir/src/WaveModel.cpp.o: ../src/WaveModel.cpp
+
 CMakeFiles/main.dir/src/main.cpp.o: ../headers/Dvector.h
 CMakeFiles/main.dir/src/main.cpp.o: ../headers/Height.h
 CMakeFiles/main.dir/src/main.cpp.o: ../src/main.cpp

@@ -9,11 +9,13 @@ set(SRCS
     src/main.cpp
     src/Dvector.cpp
     src/Height.cpp
+    src/WaveModel.cpp
     )
 
 set(HEADERS
     headers/Dvector.h
     headers/Height.h
+    headers/WaveModel.h
     )
     
 add_executable(main ${SRCS} ${HEADERS})

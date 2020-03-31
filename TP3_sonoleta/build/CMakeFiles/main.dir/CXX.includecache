@@ -6,9 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/alexis/Documents/CPP/TP3_sonoleta/headers/Height.h
+/home/alexis/Documents/CPP/TP3_sonoleta/headers/Dvector.h
+iostream
+-
 
-/home/alexis/Documents/CPP/TP3_sonoleta/src/Height.cpp
+/home/alexis/Documents/CPP/TP3_sonoleta/headers/WaveModel.h
+Dvector.h
+/home/alexis/Documents/CPP/TP3_sonoleta/headers/Dvector.h
+
+/home/alexis/Documents/CPP/TP3_sonoleta/src/WaveModel.cpp
 cstring
 -
 iostream
@@ -19,6 +25,6 @@ string
 -
 fstream
 -
-./../headers/Height.h
-/home/alexis/Documents/CPP/TP3_sonoleta/headers/Height.h
+./../headers/WaveModel.h
+/home/alexis/Documents/CPP/TP3_sonoleta/headers/WaveModel.h
 
