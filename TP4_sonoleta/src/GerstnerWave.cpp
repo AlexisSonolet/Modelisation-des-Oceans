@@ -52,9 +52,9 @@ GerstnerWave::GerstnerWave(GerstnerWave const &model)
     frequency = model.frequency;
 }
 
-double GerstnerWave::operator()(Dvector x0, int t) 
+double GerstnerWave::operator()(Dvector x, int t) 
 {
-    double z = amplitude * cos((*direction) * x0 - frequency*t + phase);
+    double z = amplitude * cos((*direction) * x - frequency*t + phase);
     return z;
 }
 
