@@ -3,10 +3,10 @@
 #include "Dvector.h"
 #include "WaveModel.h"
 
-class PhilipsWave:
+class PhilipsWave
 {
     public:
-        // TODO
+        double get_height();
     
     private:
         // TODO

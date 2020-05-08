@@ -222,7 +222,7 @@ def checkName( nom, quoi, tpinfo ):
     # report errors
     if not valid:
         if quoi != "":
-            print term_colors.colored( "Le nom de " + quoi + " doit impérativement être 'TPi_login1' ou 'TPi_login1_login2'", term_colors.FAIL )
+            print(term_colors.colored( "Le nom de " + quoi + " doit impérativement être 'TPi_login1' ou 'TPi_login1_login2'", term_colors.FAIL ))
     return valid
 
 def getSubFolderName( tpinfo ):

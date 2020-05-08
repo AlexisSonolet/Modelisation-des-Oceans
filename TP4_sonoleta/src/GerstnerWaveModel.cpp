@@ -44,7 +44,7 @@ GerstnerWaveModel::GerstnerWaveModel(GerstnerWaveModel const &model)
     }
 }
 
-WaveModel& GerstnerWaveModel::operator=(GerstnerWaveModel &&model)
+GerstnerWaveModel& GerstnerWaveModel::operator=(GerstnerWaveModel &&model)
 {
     // Si le vecteur a déjà été assigné, il faut le libérer
     delete[] listGerstnerWaves;
@@ -55,7 +55,7 @@ WaveModel& GerstnerWaveModel::operator=(GerstnerWaveModel &&model)
     return *this;
 }
 
-WaveModel& GerstnerWaveModel::operator=(GerstnerWaveModel const &model)
+GerstnerWaveModel& GerstnerWaveModel::operator=(GerstnerWaveModel const &model)
 {
     // Si le vecteur a déjà été assigné, il faut le libérer
     delete[] listGerstnerWaves;

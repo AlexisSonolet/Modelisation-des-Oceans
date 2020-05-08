@@ -14,8 +14,8 @@ class GerstnerWaveModel:
             GerstnerWaveModel(int n);
             GerstnerWaveModel(GerstnerWaveModel &&model);
             GerstnerWaveModel(GerstnerWaveModel const &model);
-            WaveModel& operator=(GerstnerWaveModel &&model);
-            WaveModel& operator=(GerstnerWaveModel const &model);
+            GerstnerWaveModel& operator=(GerstnerWaveModel &&model);
+            GerstnerWaveModel& operator=(GerstnerWaveModel const &model);
             // Utilitaires
             double operator()(Dvector x, int t);
             void setWave(GerstnerWave wave, int index);

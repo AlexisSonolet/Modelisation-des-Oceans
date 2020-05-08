@@ -30,3 +30,10 @@ class GerstnerWave
         Dvector* direction;
         double frequency;
 };
+
+#define G 9.81
+#define W_TYPE 0 // type (entre 0 et 2) utilisé pour le type 3 de compute_freq
+
+double module(Dvector* dir);
+double compute_freq(Dvector* dir, int type = 0, 
+                    double D = 0, double L = 0, double T = 1);

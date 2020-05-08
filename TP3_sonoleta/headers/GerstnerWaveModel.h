@@ -10,12 +10,14 @@ class GerstnerWaveModel:
         public:
             // Méthodes de base
             GerstnerWaveModel();
+            GerstnerWaveModel(int n);
             ~GerstnerWaveModel();
             GerstnerWaveModel(GerstnerWaveModel &&model);
             GerstnerWaveModel(GerstnerWaveModel const &model);
-            WaveModel& operator=(GerstnerWaveModel &&model);
-            WaveModel& operator=(GerstnerWaveModel const &model);
-        
+            GerstnerWaveModel& operator=(GerstnerWaveModel &&model);
+            GerstnerWaveModel& operator=(GerstnerWaveModel const &model);
+            void setGerstnerWave(int i, GerstnerWave wave);
         private:
             GerstnerWave* listGerstnerWaves;
+            int size;
     };

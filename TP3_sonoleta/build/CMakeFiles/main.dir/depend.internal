@@ -4,6 +4,16 @@
 CMakeFiles/main.dir/src/Dvector.cpp.o
  /home/alexis/Documents/CPP/TP3_sonoleta/headers/Dvector.h
  /home/alexis/Documents/CPP/TP3_sonoleta/src/Dvector.cpp
+CMakeFiles/main.dir/src/GerstnerWave.cpp.o
+ /home/alexis/Documents/CPP/TP3_sonoleta/headers/Dvector.h
+ /home/alexis/Documents/CPP/TP3_sonoleta/headers/GerstnerWave.h
+ /home/alexis/Documents/CPP/TP3_sonoleta/src/GerstnerWave.cpp
+CMakeFiles/main.dir/src/GerstnerWaveModel.cpp.o
+ /home/alexis/Documents/CPP/TP3_sonoleta/headers/Dvector.h
+ /home/alexis/Documents/CPP/TP3_sonoleta/headers/GerstnerWave.h
+ /home/alexis/Documents/CPP/TP3_sonoleta/headers/GerstnerWaveModel.h
+ /home/alexis/Documents/CPP/TP3_sonoleta/headers/WaveModel.h
+ /home/alexis/Documents/CPP/TP3_sonoleta/src/GerstnerWaveModel.cpp
 CMakeFiles/main.dir/src/Height.cpp.o
  /home/alexis/Documents/CPP/TP3_sonoleta/headers/Height.h
  /home/alexis/Documents/CPP/TP3_sonoleta/src/Height.cpp

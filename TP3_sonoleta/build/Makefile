@@ -150,6 +150,60 @@ src/Dvector.cpp.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Dvector.cpp.s
 .PHONY : src/Dvector.cpp.s
 
+src/GerstnerWave.o: src/GerstnerWave.cpp.o
+
+.PHONY : src/GerstnerWave.o
+
+# target to build an object file
+src/GerstnerWave.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/GerstnerWave.cpp.o
+.PHONY : src/GerstnerWave.cpp.o
+
+src/GerstnerWave.i: src/GerstnerWave.cpp.i
+
+.PHONY : src/GerstnerWave.i
+
+# target to preprocess a source file
+src/GerstnerWave.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/GerstnerWave.cpp.i
+.PHONY : src/GerstnerWave.cpp.i
+
+src/GerstnerWave.s: src/GerstnerWave.cpp.s
+
+.PHONY : src/GerstnerWave.s
+
+# target to generate assembly for a file
+src/GerstnerWave.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/GerstnerWave.cpp.s
+.PHONY : src/GerstnerWave.cpp.s
+
+src/GerstnerWaveModel.o: src/GerstnerWaveModel.cpp.o
+
+.PHONY : src/GerstnerWaveModel.o
+
+# target to build an object file
+src/GerstnerWaveModel.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/GerstnerWaveModel.cpp.o
+.PHONY : src/GerstnerWaveModel.cpp.o
+
+src/GerstnerWaveModel.i: src/GerstnerWaveModel.cpp.i
+
+.PHONY : src/GerstnerWaveModel.i
+
+# target to preprocess a source file
+src/GerstnerWaveModel.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/GerstnerWaveModel.cpp.i
+.PHONY : src/GerstnerWaveModel.cpp.i
+
+src/GerstnerWaveModel.s: src/GerstnerWaveModel.cpp.s
+
+.PHONY : src/GerstnerWaveModel.s
+
+# target to generate assembly for a file
+src/GerstnerWaveModel.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/GerstnerWaveModel.cpp.s
+.PHONY : src/GerstnerWaveModel.cpp.s
+
 src/Height.o: src/Height.cpp.o
 
 .PHONY : src/Height.o
@@ -243,6 +297,12 @@ help:
 	@echo "... src/Dvector.o"
 	@echo "... src/Dvector.i"
 	@echo "... src/Dvector.s"
+	@echo "... src/GerstnerWave.o"
+	@echo "... src/GerstnerWave.i"
+	@echo "... src/GerstnerWave.s"
+	@echo "... src/GerstnerWaveModel.o"
+	@echo "... src/GerstnerWaveModel.i"
+	@echo "... src/GerstnerWaveModel.s"
 	@echo "... src/Height.o"
 	@echo "... src/Height.i"
 	@echo "... src/Height.s"

@@ -10,12 +10,16 @@ set(SRCS
     src/Dvector.cpp
     src/Height.cpp
     src/WaveModel.cpp
+    src/GerstnerWave.cpp
+    src/GerstnerWaveModel.cpp
     )
 
 set(HEADERS
     headers/Dvector.h
     headers/Height.h
     headers/WaveModel.h
+    headers/GerstnerWave.h
+    headers/GerstnerWaveModel.h
     )
     
 add_executable(main ${SRCS} ${HEADERS})
