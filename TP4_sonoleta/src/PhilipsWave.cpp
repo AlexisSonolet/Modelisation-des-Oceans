@@ -55,6 +55,9 @@ double PhilipsWave::generate_xi()
 
 double PhilipsWave::get_height(Dvector k, int t)
 {
+    if (k.isnull()) {
+        return 0;
+    }
     double mod_k = sqrt(k*k);
     double Ph_k = (A * exp(-1/(pow(mod_k*L, 2))) / pow(mod_k, 2)) * pow(k*(*dir), 2);
     double height = sqrt(Ph_k/2);

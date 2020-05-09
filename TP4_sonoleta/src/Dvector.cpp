@@ -1,10 +1,10 @@
-#include "./../headers/Dvector.h"
 #include <fstream>
 #include <ostream>
 #include <istream>
 #include <string.h>
 #include <stdlib.h>
 #include <sstream>
+#include "./../headers/Dvector.h"
 
 Dvector::Dvector()
 {
@@ -334,4 +334,14 @@ void Dvector::resize(int size, double* vect)
     }
     v_size = size;
 
+}
+
+bool Dvector::isnull()
+{
+    for (int i = 0; i < v_size; i++) {
+        if (v[i] != 0) {
+            return false;
+        }
+    }
+    return true;
 }

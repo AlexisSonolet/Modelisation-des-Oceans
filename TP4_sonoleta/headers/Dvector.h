@@ -34,6 +34,7 @@ class Dvector
         Dvector operator-();
         bool operator==(const Dvector &vect);
         void resize(int size, double* vect = 0);
+        bool isnull();
 
     private:
         double* v;
