@@ -8,38 +8,57 @@
 
 using namespace std;
 
-/**
- * calcule w(k)
- * 
- * k : norme du vecteur d'ondes
- * 
- * type :
- * - 0 : cas de houle
- * - 1 : eau peu profonde
- * - 2 : avec la tension de surface
- * 
- * D : profondeur
- * V : vitesse maximale du vent
- */
-double compute_w(double k, int type, double D, double V)
-{
-    // Constantes
-    double g = 9.81;
-    double L = V*V/g;
+// === Méthodes principales ===
 
-    switch (type)
-    {
-    case 1:
-        return g * k * tanh(k * D);
-    case 2:
-        return g * k * (1 + k*k*L*L);
-    default:
-        // Type = 0 ou autre
-        return g * k;
-    } 
+PhilipsWave::PhilipsWave()
+{
+    L = 0;
+    V = 0;
+    w = 0;
+    A = 0;
+    Lx, Ly = 1, 1;
+    n , m = 1, 1;
+    xi_r, xi_i = 0, 0;
+    k = new Dvector(2, 1);
 }
 
-double PhilipsWave::get_height()
+PhilipsWave::~PhilipsWave()
+{
+    delete k;
+}
+
+PhilipsWave::PhilipsWave(double n, double m, double Lx, double Ly, 
+                         double A, double w, double V)
+{
+    Lx, Ly = Lx, Ly;
+    n, m = n, m;
+    V = V;
+    A = A;
+    w = w;
+    double kx, ky;
+    kx = 2 * M_PI * n / Lx;
+    kx = 2 * M_PI * m / Ly;
+    k = new Dvector(2, 1);
+    k->set(0, kx);
+    k->set(1, ky);
+    xi_r, xi_i = generate_xi(), generate_xi();
+}
+
+// === Méthodes utiles ===
+
+double PhilipsWave::generate_xi()
 {
     // TODO
+    return 1;
+}
+
+double PhilipsWave::get_height(PARAMS, int t)
+{
+    // TODO
+    return 1;
+}
+
+double PhilipsWave::operator()(PARAMS, int t)
+{
+    return PhilipsWave::get_height(PARAMS, t);
 }

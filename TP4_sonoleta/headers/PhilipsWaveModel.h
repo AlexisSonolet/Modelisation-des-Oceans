@@ -13,11 +13,12 @@ class PhilipsWaveModel:
             ~PhilipsWaveModel();
             PhilipsWaveModel(PhilipsWaveModel &&model);
             PhilipsWaveModel(PhilipsWaveModel const &model);
-            WaveModel& operator=(PhilipsWaveModel &&model);
-            WaveModel& operator=(PhilipsWaveModel const &model);
+            PhilipsWaveModel& operator=(PhilipsWaveModel &&model);
+            PhilipsWaveModel& operator=(PhilipsWaveModel const &model);
 
             // Méthodes utiles
             double compute_h(Dvector x, double t);
+            double operator()(Dvector x, double t);
         
         private:
             PhilipsWave* listPhilipsWaves;

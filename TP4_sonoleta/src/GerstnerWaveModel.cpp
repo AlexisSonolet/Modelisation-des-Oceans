@@ -74,6 +74,7 @@ double GerstnerWaveModel::operator()(Dvector x, int t)
     for (int i = 0; i < size; i++) {
         sum += listGerstnerWaves[i](x, t);
     }
+    return sum;
 }
 
 void GerstnerWaveModel::setWave(GerstnerWave wave, int index)
