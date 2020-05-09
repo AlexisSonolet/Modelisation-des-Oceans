@@ -10,7 +10,7 @@ class PhilipsWave
         PhilipsWave();
         ~PhilipsWave();
         PhilipsWave(double n, double m, double Lx, double Ly, 
-                    double A, double w, double V);
+                    double A, double w, double V, Dvector* dir);
         PhilipsWave(PhilipsWave &&model);
         PhilipsWave(PhilipsWave const &model);
         PhilipsWave operator=(PhilipsWave &&model);
@@ -18,8 +18,8 @@ class PhilipsWave
 
         // Méthodes utiles
         double generate_xi();
-        double operator()(PARAMS, int t);
-        double get_height();
+        double operator()(Dvector k, int t);
+        double get_height(Dvector k, int t);
 
         // Getters & Setters
     
@@ -28,9 +28,8 @@ class PhilipsWave
         double V;
         double w;
         double A;
-        Dvector* k;
+        Dvector* dir;
         double Lx, Ly;
-        double n, m;
         double xi_r, xi_i;
 };
 
