@@ -4,6 +4,7 @@ project(TP2)
 
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_FLAGS"-g -Wall")
+set(CMAKE_BUILD_TYPE Debug)
 
 set(SRCS
     src/main.cpp

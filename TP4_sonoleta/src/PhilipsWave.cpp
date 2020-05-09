@@ -4,6 +4,8 @@
 #include <string>
 #include <fstream>
 #include <tgmath.h>
+#include <random>
+
 #include "./../headers/PhilipsWave.h"
 
 using namespace std;
@@ -23,7 +25,7 @@ PhilipsWave::PhilipsWave()
 
 PhilipsWave::~PhilipsWave()
 {
-    delete k;
+    delete dir;
 }
 
 PhilipsWave::PhilipsWave(double n, double m, double Lx, double Ly, 
@@ -38,17 +40,17 @@ PhilipsWave::PhilipsWave(double n, double m, double Lx, double Ly,
     kx = 2 * M_PI * n / Lx;
     kx = 2 * M_PI * m / Ly;
     dir = dir;
-    xi_r, xi_i = generate_xi(), generate_xi();
-
-    
+    xi_r, xi_i = generate_xi(), generate_xi();  
 }
 
 // === Méthodes utiles ===
 
 double PhilipsWave::generate_xi()
 {
-    // TODO
-    return 1;
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::normal_distribution<double> d(0, 1);
+    return d(gen);
 }
 
 double PhilipsWave::get_height(Dvector k, int t)
