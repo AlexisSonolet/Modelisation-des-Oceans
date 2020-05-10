@@ -5,6 +5,14 @@
 using namespace std;
 
 int main() {
+	// test de even/odd
+	//Dvector test(7);
+	//test.fillRandomly();
+	//test.display(cout);
+	//Dvector test_even = test.get_even();
+	//test_even.display(cout);
+	//Dvector test_odd = test.get_odd();
+	//test_odd.display(cout);
     // Question 1 : Height
     cout << "Classe Height" << endl;
     cout << "1.1. Création d'une surface" << endl;

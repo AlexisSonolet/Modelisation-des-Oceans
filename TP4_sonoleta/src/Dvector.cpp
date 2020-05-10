@@ -128,6 +128,26 @@ double* Dvector::get_v() const
     return v;
 }
 
+Dvector Dvector::get_even() const
+{
+	Dvector even((int)((v_size-1)/2) + 1);
+	for(int index = 0; index < v_size; index+=2)
+	{
+		even.set(index/2, v[index]);
+	}
+	return even;	
+}
+
+Dvector Dvector::get_odd() const
+{
+	Dvector odd((int)(v_size/2));
+	for(int index = 1; index < v_size; index+=2)
+	{
+		odd.set((int)(index/2), v[index]);
+	}
+	return odd;	
+}
+
 Dvector Dvector::operator=(const Dvector &vect)
 {
     // Si le vecteur a déjà été assigné, il faut le libérer
