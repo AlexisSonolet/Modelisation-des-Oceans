@@ -1,3 +1,0 @@
-/mnt/c/Users/Alexis Sonolet/Desktop/CPP project/CPP/TP4_sonoleta/build/CMakeFiles/rebuild_cache.dir
-/mnt/c/Users/Alexis Sonolet/Desktop/CPP project/CPP/TP4_sonoleta/build/CMakeFiles/edit_cache.dir
-/mnt/c/Users/Alexis Sonolet/Desktop/CPP project/CPP/TP4_sonoleta/build/CMakeFiles/main.dir
