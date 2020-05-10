@@ -18,6 +18,8 @@ class Dvector
         void set_size(int size);
         void set_v(double* vect);
         double* get_v() const;
+		Dvector get_even() const;
+		Dvector get_odd() const;
         Dvector operator=(const Dvector &vect);
         Dvector operator+=(const Dvector &vect);
         Dvector operator-=(const Dvector &vect);
