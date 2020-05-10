@@ -1,0 +1,67 @@
+TP1
+
+Q2 : Il faut de véritables programmes de test
+avec des assert etc
+
+ex du prof : 
+
+Dvectorv(3,2.5);
+assert( v.size()==3);
+std::stringstream str;
+v.display( str );
+assert( str.str()=="2.5\n2.5\n2.5\n");
+std::cout<<"OK";
+
+Q3 : Manque les instructions d'affichage (à moins que je ne les ai raté) 
+
+Q4 : OK
+
+Diff entre nos fichiers : j'avais mis par défaut size = 0
+donc constructeur par défaut :  Dvector(){size = 0;}
+
+-------------------------------------------
+
+TP2
+
+Q1 : Il manque les programmes de test, il sont dans le main mais les questions répondues sont différentes de celles demandées dans Analyse
+
+Il manque *= et /= dans les tests du fichier main, il manque la divion et la soustraction par un réel (mm si ça marche sans doute le prof va être chiant dessus sinon)
+
+Q2 : A repondre 
+Mettre e névidence la diff entre l'utilisation des 2 opérateur + suivants :
+Dvector operator+ (Dvector a, Dvector b)
+Dvector operator+ (const Dvector &a, const Dvector &b)
+Comparer le nombre d'objets crées dans les 2 cas
+
+Q3 : A répondre
+Identifier d'autres factorisations possibles
+
+Q4 : A repondre
+Comparer perf de = si on utilise ou non la fonction memcpy pour recopier les données. Tester l'efficacité de ces 2 versions sur des vect de plusieurs millions d'element (voir sujet)
+
+
+ 
+Diff entre nos fichiers: Tu utilises une methode get pour accéder à un élément mais je pense que ce qui est demander c'est de surcharger () pour accéder à un élément, j'ai crée une méthode dans la class Dvector:
+
+double & Dvector::operator()(int i) const
+{
+	if(i < 0 || i > dim-1){
+		throw std::invalid_argument("Erreur, out of range");
+	}
+	else{
+		return pVal[i];
+	}
+
+}
+
+Des diff dans l'implémentation des flux mais la tienne est meilleure je pense
+
+Valgrind ok
+-----------------------------------
+
+TP3
+
+
+
+
+
