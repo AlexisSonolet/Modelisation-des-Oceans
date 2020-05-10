@@ -11,12 +11,22 @@ set(SRCS
     src/Dvector.cpp
     src/Height.cpp
     src/WaveModel.cpp
+    src/GerstnerWaveModel.cpp
+    src/GerstnerWave.cpp
+    src/PhilipsWaveModel.cpp
+    src/PhilipsWave.cpp
+    # src/FastFourier.cpp
     )
 
 set(HEADERS
     headers/Dvector.h
     headers/Height.h
     headers/WaveModel.h
+    headers/GerstnerWaveModel.h
+    headers/GerstnerWave.h
+    headers/PhilipsWaveModel.h
+    headers/PhilipsWave.h
+    # headers/FastFourier.h
     )
     
 add_executable(main ${SRCS} ${HEADERS})

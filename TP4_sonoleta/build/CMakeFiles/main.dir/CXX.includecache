@@ -6,33 +6,21 @@
 
 #IncludeRegexTransform: 
 
-/home/alexis/Documents/CPP/TP4_sonoleta/headers/Dvector.h
+/mnt/c/Users/Alexis Sonolet/Desktop/CPP project/CPP/TP4_sonoleta/headers/Dvector.h
 iostream
 -
 
-/home/alexis/Documents/CPP/TP4_sonoleta/headers/Height.h
-
-/home/alexis/Documents/CPP/TP4_sonoleta/headers/WaveModel.h
+/mnt/c/Users/Alexis Sonolet/Desktop/CPP project/CPP/TP4_sonoleta/headers/PhilipsWave.h
 Dvector.h
-/home/alexis/Documents/CPP/TP4_sonoleta/headers/Dvector.h
+/mnt/c/Users/Alexis Sonolet/Desktop/CPP project/CPP/TP4_sonoleta/headers/Dvector.h
+WaveModel.h
+/mnt/c/Users/Alexis Sonolet/Desktop/CPP project/CPP/TP4_sonoleta/headers/WaveModel.h
 
-/home/alexis/Documents/CPP/TP4_sonoleta/src/Dvector.cpp
-./../headers/Dvector.h
-/home/alexis/Documents/CPP/TP4_sonoleta/headers/Dvector.h
-fstream
--
-ostream
--
-istream
--
-string.h
--
-stdlib.h
--
-sstream
--
+/mnt/c/Users/Alexis Sonolet/Desktop/CPP project/CPP/TP4_sonoleta/headers/WaveModel.h
+Dvector.h
+/mnt/c/Users/Alexis Sonolet/Desktop/CPP project/CPP/TP4_sonoleta/headers/Dvector.h
 
-/home/alexis/Documents/CPP/TP4_sonoleta/src/Height.cpp
+/mnt/c/Users/Alexis Sonolet/Desktop/CPP project/CPP/TP4_sonoleta/src/PhilipsWave.cpp
 cstring
 -
 iostream
@@ -43,28 +31,12 @@ string
 -
 fstream
 -
-./../headers/Height.h
-/home/alexis/Documents/CPP/TP4_sonoleta/headers/Height.h
-
-/home/alexis/Documents/CPP/TP4_sonoleta/src/WaveModel.cpp
-cstring
+tgmath.h
 -
-iostream
+random
 -
-stdlib.h
+cmath
 -
-string
--
-fstream
--
-./../headers/WaveModel.h
-/home/alexis/Documents/CPP/TP4_sonoleta/headers/WaveModel.h
-
-/home/alexis/Documents/CPP/TP4_sonoleta/src/main.cpp
-iostream
--
-./../headers/Dvector.h
-/home/alexis/Documents/CPP/TP4_sonoleta/headers/Dvector.h
-./../headers/Height.h
-/home/alexis/Documents/CPP/TP4_sonoleta/headers/Height.h
+./../headers/PhilipsWave.h
+/mnt/c/Users/Alexis Sonolet/Desktop/CPP project/CPP/TP4_sonoleta/headers/PhilipsWave.h
 

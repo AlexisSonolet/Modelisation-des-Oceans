@@ -6,6 +6,8 @@
 #include <sstream>
 #include "./../headers/Dvector.h"
 
+using namespace std;
+
 Dvector::Dvector()
 {
     v = new double[0]; // v vecteur de taille définie
@@ -28,18 +30,18 @@ Dvector::Dvector(Dvector const& vect)
         v[i] = *(vect.v + i);
 };
 
-Dvector::Dvector(std::string fichier)
+Dvector::Dvector(string fichier)
 {
-    std::ifstream flux(fichier);
+    ifstream flux(fichier);
     double n; // cast en double de la ligne courante
     int vect_size = 0;
     if(flux)
     {
-        std::string ligne;
+        string ligne;
         while(getline(flux, ligne)) //Tant qu'on n'est pas à la fin, on lit
         {
             try {
-                n = std::stod(ligne);
+                n = stod(ligne);
                 vect_size++;
             }
             catch(...) {/* TODO : éviter les "..." => trouver la bonne erreur */ }
@@ -57,11 +59,11 @@ Dvector::Dvector(std::string fichier)
     v_size = vect_size;
     // On remplit le vecteur
     int i = 0;
-    std::string ligne;
+    string ligne;
     while(getline(flux, ligne)) //Tant qu'on n'est pas à la fin, on lit
     {
         try {
-            n = std::stod(ligne);
+            n = stod(ligne);
             v[i] = n;
             i++;
         }
@@ -74,10 +76,10 @@ Dvector::~Dvector()
     delete[] v;
 };
 
-void Dvector::display(std::ostream& str)
+void Dvector::display(ostream& str)
 {
     for (long unsigned int i = 0; i< v_size; i++) {
-        str << v[i] << std::endl;
+        str << v[i] << endl;
     }
 };
 
@@ -97,7 +99,7 @@ void Dvector::fillRandomly()
 double Dvector::get(int index) const
 {
     if (index >= v_size) {
-        throw std::string("Error : cannot access to an index above the size of the vector");
+        throw string("Error : cannot access to an index above the size of the vector");
         return 0;
     } else {
         return v[index];
@@ -107,7 +109,7 @@ double Dvector::get(int index) const
 void Dvector::set(int index, double value)
 {
     if (index >= v_size) {
-        throw std::string("Error : cannot access to an index above the size of the vector");
+        throw string("Error : cannot access to an index above the size of the vector");
     }
 
     v[index] = value;
@@ -162,7 +164,7 @@ Dvector Dvector::operator=(const Dvector &vect)
 Dvector Dvector::operator+=(const Dvector &vect)
 {
     if (v_size != vect.v_size) {
-        throw std::string("Error : vectors of different sizes");
+        throw string("Error : vectors of different sizes");
     }
     for (int index = 0; index<v_size; index++) {
         v[index] += vect.get(index);
@@ -173,7 +175,7 @@ Dvector Dvector::operator+=(const Dvector &vect)
 Dvector Dvector::operator-=(const Dvector &vect)
 {
     if (v_size != vect.v_size) {
-        throw std::string("Error : vectors of different sizes");
+        throw string("Error : vectors of different sizes");
     }
     for (int index = 0; index<v_size; index++) {
         v[index] -= vect.get(index);
@@ -192,7 +194,7 @@ Dvector Dvector::operator*=(int i)
 Dvector Dvector::operator*=(const Dvector &vect)
 {
     if (v_size != vect.v_size) {
-        throw std::string("Error : vectors of different sizes");
+        throw string("Error : vectors of different sizes");
     }
     for (int index = 0; index<v_size; index++) {
         v[index] *= vect.v[index];
@@ -203,7 +205,7 @@ Dvector Dvector::operator*=(const Dvector &vect)
 Dvector Dvector::operator/=(int i)
 {
     if (i == 0) {
-        throw std::string("NullDivisionError : cannot divide by 0");
+        throw string("NullDivisionError : cannot divide by 0");
     }
     for (int index = 0; index<v_size; index++) {
         v[index] /= i;
@@ -242,7 +244,7 @@ double Dvector::operator*(const Dvector &vector)
 {
     // Produit scalaire
     if (v_size != vector.v_size) {
-        throw std::string("Error : vectors of different sizes");
+        throw string("Error : vectors of different sizes");
     }
     double value;
     for (int index = 0; index<v_size; index++) {
@@ -254,7 +256,7 @@ double Dvector::operator*(const Dvector &vector)
 Dvector Dvector::operator/(int i)
 {
     if (i == 0) {
-        throw std::string("NullDivisionError : cannot divide by 0");
+        throw string("NullDivisionError : cannot divide by 0");
     }
 
     Dvector vect(v_size);
@@ -267,7 +269,7 @@ Dvector Dvector::operator/(int i)
 Dvector Dvector::operator+(Dvector &vect)
 {
     if (vect.v_size != v_size) {
-        throw std::string("Error : size doesn't match");
+        throw string("Error : size doesn't match");
     }
     Dvector vector(v_size);
     for (int index = 0; index<v_size; index++) {
@@ -279,7 +281,7 @@ Dvector Dvector::operator+(Dvector &vect)
 Dvector Dvector::operator-(Dvector &vect)
 {
     if (vect.v_size != v_size) {
-        throw std::string("Error : size doesn't match");
+        throw string("Error : size doesn't match");
     }
     Dvector vector(v_size);
     for (int index = 0; index<v_size; index++) {
@@ -297,23 +299,23 @@ Dvector Dvector::operator-()
     return vector;
 }
 
-std::ostream& operator<<(std::ostream& out, const Dvector& v)
+ostream& operator<<(ostream& out, const Dvector& v)
 {
     for (long unsigned int i = 0; i<v.size() ; i++) {
-        out << v.get(i) << std::endl;
+        out << v.get(i) << endl;
     }
     return out;
 }
 
-std::istream& operator>>(std::istream& in, Dvector& v)
+istream& operator>>(istream& in, Dvector& v)
 {
     int index = 0; // taille de vect
 
-    std::string input;
+    string input;
     double n;
-    while (getline(std::cin, input) && !input.empty()) {
+    while (getline(cin, input) && !input.empty()) {
         try {
-            std::stringstream ss(input);
+            stringstream ss(input);
             ss >> n;
             v.set(index, n);
             index++;

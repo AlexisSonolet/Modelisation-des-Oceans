@@ -44,6 +44,47 @@ PhilipsWave::PhilipsWave(double n, double m, double Lx, double Ly,
     xi_r, xi_i = generate_xi(), generate_xi();  
 }
 
+PhilipsWave::PhilipsWave(PhilipsWave &&model)
+{
+    dir = model.dir;
+    model.dir = nullptr;
+    L, V, w, A = model.L, model.V, model.w, model.A;
+    Lx, Ly = model.Lx, model.Ly;
+    xi_i, xi_r = model.xi_i, model.xi_r;
+}
+
+PhilipsWave::PhilipsWave(PhilipsWave const &model)
+{
+    dir = new Dvector(*model.dir);
+    L, V, w, A = model.L, model.V, model.w, model.A;
+    Lx, Ly = model.Lx, model.Ly;
+    xi_i, xi_r = model.xi_i, model.xi_r;
+}
+
+PhilipsWave PhilipsWave::operator=(PhilipsWave &&model)
+{
+    delete[] dir;
+    dir = model.dir;
+    model.dir = nullptr;
+    L, V, w, A = model.L, model.V, model.w, model.A;
+    Lx, Ly = model.Lx, model.Ly;
+    xi_i, xi_r = model.xi_i, model.xi_r;
+
+    return *this;
+}
+
+PhilipsWave PhilipsWave::operator=(PhilipsWave const &model)
+{
+    delete[] dir;
+    dir = new Dvector(*model.dir);
+    L, V, w, A = model.L, model.V, model.w, model.A;
+    Lx, Ly = model.Lx, model.Ly;
+    xi_i, xi_r = model.xi_i, model.xi_r;
+
+    return *this;
+}
+
+
 // === Méthodes utiles ===
 
 double PhilipsWave::generate_xi()

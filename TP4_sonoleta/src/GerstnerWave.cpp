@@ -52,6 +52,31 @@ GerstnerWave::GerstnerWave(GerstnerWave const &model)
     frequency = model.frequency;
 }
 
+GerstnerWave GerstnerWave::operator=(GerstnerWave &&model)
+{
+    delete[] direction;
+    direction = model.direction;
+    model.direction = nullptr;
+
+    amplitude = model.amplitude;
+    phase = model.phase;
+    frequency = model.frequency;
+
+    return *this;
+}
+
+GerstnerWave GerstnerWave::operator=(GerstnerWave const &model)
+{
+    delete[] direction;
+    direction = new Dvector(*model.direction);
+
+    amplitude = model.amplitude;
+    phase = model.phase;
+    frequency = model.frequency;
+
+    return *this;
+}
+
 double GerstnerWave::operator()(Dvector x, int t) 
 {
     double z = amplitude * cos((*direction) * x - frequency*t + phase);
