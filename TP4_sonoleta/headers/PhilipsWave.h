@@ -34,5 +34,3 @@ class PhilipsWave
 };
 
 // ==== Autres fonctions utiles ====
-
-#define g 9.81

@@ -5,6 +5,7 @@
 #include <fstream>
 #include <tgmath.h>
 #include <random>
+#include <cmath>
 
 #include "./../headers/PhilipsWave.h"
 
