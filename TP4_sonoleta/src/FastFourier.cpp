@@ -1,12 +1,11 @@
 #include "./../headers/FastFourier.h"
-#include <complex>
 
 using namespace std;
 
 #define complex_i 1i
 
 
-Dvector fft(Dvector &vect)
+ComplexVector<complex<double>> fft(ComplexVector<complex<double>> &vect)
 {
 	int n = vect.size(); 
 	if(n<=1)
@@ -16,8 +15,8 @@ Dvector fft(Dvector &vect)
 	else
 	{
 		// On choisit les éléments d'indice pairs et impairs
-		Dvector even_vect = vect.get_even(); // Vecteur de complexes !
-		Dvector odd_vect = vect.get_odd(); // Vecteur de complexes !
+		ComplexVector even_vect = vect.get_even(); // Vecteur de complexes !
+		ComplexVector odd_vect = vect.get_odd(); // Vecteur de complexes !
 		//Appel récursif sur chacun des sous-tableaux
 		fft(even_vect);
 		fft(odd_vect);

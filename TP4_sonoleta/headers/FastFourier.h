@@ -1,5 +1,6 @@
 #pragma once
 
-#include "Dvector.h"
+#include <complex>
+#include "ComplexVector.h"
 
-Dvector fft(const Dvector &vect);
+ComplexVector<complex<double>> fft(const ComplexVector<complex<double>> &vect);
