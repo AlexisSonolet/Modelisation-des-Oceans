@@ -1,4 +1,6 @@
-cmake_minimum_required(VERSION 3.14)
+cmake_minimum_required(VERSION 3.0)
+
+#set_source_files_properties(templates/ComplexVector.txx PROPERTIES LANGUAGE CXX)
 
 project(TP2)
 
@@ -15,18 +17,20 @@ set(SRCS
     src/GerstnerWave.cpp
     src/PhilipsWaveModel.cpp
     src/PhilipsWave.cpp
-    # src/FastFourier.cpp
+	#	src/ComplexVector.cpp
+	#src/FastFourier.cpp
     )
 
 set(HEADERS
     headers/Dvector.h
-    headers/Height.h
+	headers/ComplexVector.h
+	headers/Height.h
     headers/WaveModel.h
     headers/GerstnerWaveModel.h
     headers/GerstnerWave.h
     headers/PhilipsWaveModel.h
     headers/PhilipsWave.h
-    # headers/FastFourier.h
+	# headers/FastFourier.h
     )
     
 add_executable(main ${SRCS} ${HEADERS})
