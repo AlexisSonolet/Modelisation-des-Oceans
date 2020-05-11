@@ -1,2 +1,5 @@
 # Build folder
 build/
+
+#Swp files
+*.swp
