@@ -18,7 +18,7 @@ set(SRCS
     src/PhilipsWaveModel.cpp
     src/PhilipsWave.cpp
 	#	src/ComplexVector.cpp
-	#src/FastFourier.cpp
+	src/FastFourier.cpp
     )
 
 set(HEADERS
@@ -30,7 +30,7 @@ set(HEADERS
     headers/GerstnerWave.h
     headers/PhilipsWaveModel.h
     headers/PhilipsWave.h
-	# headers/FastFourier.h
+	headers/FastFourier.h
     )
     
 add_executable(main ${SRCS} ${HEADERS})

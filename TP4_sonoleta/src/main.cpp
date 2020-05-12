@@ -17,22 +17,32 @@ int main() {
 	//Dvector test_odd = test.get_odd();
 	//test_odd.display(cout);
     // Question 1 : Height
-    //cout << "Test FFT" << endl;
+    cout << "Test FFT" << endl;
 	// Using the tests at http://www.sccon.ca/sccon/fft/fft3.htm
-	//ComplexVector<complex<double>> test_vect(8);
-//	for(int i = 0; i < 5; i++){
-	//test_vect.set(0, complex<double>(1.0,0.0));
-		
+	ComplexVector<complex<double>> test_vect(8);
+//	for(int i = 0; i < 8; i++){
+	test_vect.set(0, complex<double>(1.0,0.0));
 //	}	
-	//test_vect.display(cout);
-	//cout << "We apply FFT and obtain" << endl;
-	//fft(test_vect);
-	//test_vect.display(cout);
-	cout << "Test ComplexVector" << endl;
-	ComplexVector <complex<double>> test_vect(8);
 	test_vect.display(cout);
+	cout << "We apply FFT and obtain" << endl;
+	fft(test_vect);
+	test_vect.display(cout);
+	cout << "Test FFT2" << endl;
+	// Using the tests at http://www.sccon.ca/sccon/fft/fft3.htm
+	ComplexVector<complex<double>> test_fft_2(8);
+//	for(int i = 0; i < 8; i++){
+	test_fft_2.set(1, complex<double>(1.0,0.0));
+//	}	
+	test_fft_2.display(cout);
+	cout << "We apply FFT and obtain" << endl;
+	fft(test_fft_2);
+	test_fft_2.display(cout);
+
+	cout << "Test ComplexVector" << endl;
+	ComplexVector <complex<double>> test_vect_1(8);
+	test_vect_1.display(cout);
 	printf("Type:\n");
-	cout << typeid(test_vect).name() << endl;
+	cout << typeid(test_vect_1).name() << endl;
 	printf("TestFill\n");
 	ComplexVector <complex<double>> test_vect_init(5, complex<double>(1,2)); 
 	test_vect_init.display(cout);

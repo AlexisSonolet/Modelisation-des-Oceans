@@ -2,5 +2,5 @@
 
 #include <complex>
 #include "ComplexVector.h"
-
-ComplexVector<complex<double>> fft(ComplexVector<complex<double>> &vect);
+//ComplexVector<complex<double>> 
+void fft(ComplexVector<complex<double>> &vect);

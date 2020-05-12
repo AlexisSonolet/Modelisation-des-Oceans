@@ -6,13 +6,13 @@ using namespace std;
 
 #define complex_i 1i
 
-
-ComplexVector<complex<double>> fft(ComplexVector<complex<double>> &vect)
+//ComplexVector<complex<double>> 
+void fft(ComplexVector<complex<double>> &vect)
 {
 	int n = vect.size(); 
 	if(n<=1)
 	{
-		return vect;
+		return;
 	}
 	else
 	{
