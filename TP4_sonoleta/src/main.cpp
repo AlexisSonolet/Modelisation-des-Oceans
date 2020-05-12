@@ -45,6 +45,8 @@ int main() {
 	ComplexVector <complex<double>> test_vect_copie(test_vect_2);
 	printf("J'affiche la copie :\n");
 	test_vect_copie.display(cout);
+	printf("Check ==\n");
+	printf(test_vect_copie == test_vect_2 ? "true\n" : "false\n");
 	printf("Je modifie la copie\n");
 	test_vect_copie.set(1, complex<double>(2,3));
 	printf("J'affiche la copie:\n");
@@ -64,7 +66,12 @@ int main() {
 	printf(" *= fillRandomly :\n");
 	test_vect_3 *= test_vect_2;
 	test_vect_3.display(cout);
-	
+	printf("Test print << \n");
+	cout << test_vect_3 << endl;
+	//printf("Test >> \n");
+	//ComplexVector <complex<double>> test_vect_4(1);
+	//cin >> test_vect_4;
+	//cout << test_vect_4 << endl;
 	cout << "Classe Height" << endl;
     cout << "1.1. Création d'une surface" << endl;
     Height h(5, 5, 5, 5);

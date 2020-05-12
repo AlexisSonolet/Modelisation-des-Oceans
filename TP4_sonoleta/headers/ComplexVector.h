@@ -422,12 +422,22 @@ istream& operator>>(istream& in, ComplexVector<T>& v)
 
     string input;
     double n;
-    while (getline(cin, input) && !input.empty()) {
+	double m;
+	complex<double> ex;
+	while (getline(cin, input) && !input.empty()) {
         try {
             stringstream ss(input);
             ss >> n;
-            v.set(index, n);
-            index++;
+			if(typeid(T) == typeid(ex))
+			{
+				ss >> m;
+				v.set(index, complex<double>(n,m));
+			}
+			else
+			{
+				v.set(index, n);
+			}
+			index++;
         }
         catch(...) {/* TODO : éviter les "..." => trouver la bonne erreur */}
     }
