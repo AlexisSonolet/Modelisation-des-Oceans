@@ -8,7 +8,15 @@
 using namespace std;
 
 int main() {
-	
+	cout << "Test IFFT croissant/decroissant" << endl;
+	ComplexVector<complex<double>> test_croiss_decroiss(8);
+	for(int i = 0; i < 8; i++)
+	{
+		test_croiss_decroiss.set(i, complex<double>(i+1, 8-i));
+	}
+	printf("On applique la IFFT\n");
+	fft(test_croiss_decroiss, true);
+	cout << test_croiss_decroiss << endl;
 	cout << "Classe Height" << endl;
     cout << "1.1. Création d'une surface" << endl;
     Height h(5, 5, 5, 5);
