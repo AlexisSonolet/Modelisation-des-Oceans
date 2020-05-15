@@ -235,7 +235,7 @@ ComplexVector<T> ComplexVector<T>::get_even() const
 template<typename T>
 ComplexVector<T> ComplexVector<T>::get_odd() const
 {
-	ComplexVector odd((int)(v_size/2));
+	ComplexVector<T> odd((int)(v_size/2));
 	for(int index = 1; index < v_size; index+=2)
 	{
 		odd.set((int)(index/2), v[index]);
@@ -246,12 +246,12 @@ ComplexVector<T> ComplexVector<T>::get_odd() const
 template<typename T>
 ComplexVector<T> ComplexVector<T>::conjug() const
 {
-	ComplexVector conjugate(v_size);
+	ComplexVector<T> conjugate(v_size);
 	for(int index = 0; index < v_size; index++)
 	{
 		conjugate.set(index, conj(v[index]));
 	}
-    return conjugate;
+	return conjugate;
 }
 
 template<typename T>
