@@ -31,7 +31,7 @@ class ComplexVector
         T* get_v() const;
 		ComplexVector get_even() const;
 		ComplexVector get_odd() const;
-        ComplexVector conjug() const;
+        void conjug();
 		ComplexVector operator=(const ComplexVector &vect);
         ComplexVector operator+=(const ComplexVector &vect);
         ComplexVector operator-=(const ComplexVector &vect);
@@ -244,14 +244,12 @@ ComplexVector<T> ComplexVector<T>::get_odd() const
 }
 
 template<typename T>
-ComplexVector<T> ComplexVector<T>::conjug() const
+void ComplexVector<T>::conjug() 
 {
-	ComplexVector<T> conjugate(v_size);
 	for(int index = 0; index < v_size; index++)
 	{
-		conjugate.set(index, conj(v[index]));
+		v[index] = conj(v[index]);
 	}
-	return conjugate;
 }
 
 template<typename T>

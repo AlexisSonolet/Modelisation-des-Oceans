@@ -37,12 +37,12 @@ void fft(ComplexVector<complex<double>> &vect, bool inverse)
 		else
 		{
 			// Transformée de Fourier Inverse
-			ComplexVector<complex<double>> conjugate = vect.conjug();
-			vect.set_v(conjugate.get_v());
-			// cout << vect.size() << endl;
+			cout << vect << endl;
+			vect.conjug();
+			cout << vect << endl;
+			//cout << vect.size() << endl;
 			fft(vect, false);	
-			ComplexVector<complex<double>> conjugate_2 = vect.conjug();
-			vect.set_v(conjugate_2.get_v());
+			vect.conjug();
 			vect /= n;
 		}	
 
