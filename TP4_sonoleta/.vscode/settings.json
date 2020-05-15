@@ -75,5 +75,6 @@
         "xtr1common": "cpp",
         "xutility": "cpp",
         "*.txx": "cpp"
-    }
+    },
+    "C_Cpp.default.configurationProvider": "vector-of-bool.cmake-tools"
 }

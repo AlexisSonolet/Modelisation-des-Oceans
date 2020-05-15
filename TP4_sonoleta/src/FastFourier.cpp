@@ -22,8 +22,8 @@ void fft(ComplexVector<complex<double>> &vect, bool inverse)
 		if(!inverse)
 		{
 			// On choisit les éléments d'indice pairs et impairs
-			ComplexVector<complex<double>>  even_vect = vect.get_even(); // Vecteur de complexes !
-			ComplexVector<complex<double>>  odd_vect = vect.get_odd(); // Vecteur de complexes !
+			ComplexVector<complex<double>>  even_vect = vect.get_even();
+			ComplexVector<complex<double>>  odd_vect = vect.get_odd();
 			//Appel récursif sur chacun des sous-tableaux
 			fft(even_vect);
 			fft(odd_vect);
@@ -39,7 +39,7 @@ void fft(ComplexVector<complex<double>> &vect, bool inverse)
 			// Transformée de Fourier Inverse
 			ComplexVector<complex<double>> conjugate = vect.conjug();
 			vect.set_v(conjugate.get_v());
-			cout << vect.size() << endl;
+			// cout << vect.size() << endl;
 			fft(vect, false);	
 			ComplexVector<complex<double>> conjugate_2 = vect.conjug();
 			vect.set_v(conjugate_2.get_v());

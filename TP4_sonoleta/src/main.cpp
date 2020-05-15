@@ -17,6 +17,8 @@ int main() {
 	printf("On applique la IFFT\n");
 	fft(test_croiss_decroiss, true);
 	cout << test_croiss_decroiss << endl;
+
+
 	cout << "Classe Height" << endl;
     cout << "1.1. Création d'une surface" << endl;
     Height h(5, 5, 5, 5);
@@ -27,7 +29,7 @@ int main() {
     }
     h.plot("./../");
     
-    cout << "1.2. est du foncteur" << endl;
+    cout << "1.2. et du foncteur" << endl;
     double value = h(2, 3);
     cout << "h(2,3) = " << value << endl;
 

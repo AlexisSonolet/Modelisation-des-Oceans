@@ -63,7 +63,6 @@ std::istream& operator>>(std::istream& in, ComplexVector<T>& v);
 // === Math constants ===
 #define g 9.81
 #define M_PI 3.14159265358979323846264338327950288
-#define M_PI_2 1.57079632679489661923132169163975144
 
 template<typename T>
 ComplexVector<T>::ComplexVector()
@@ -252,8 +251,9 @@ ComplexVector<T> ComplexVector<T>::conjug() const
 	{
 		conjugate.set(index, conj(v[index]));
 	}
-
+    return conjugate;
 }
+
 template<typename T>
 ComplexVector<T> ComplexVector<T>::operator=(const ComplexVector &vect)
 {
