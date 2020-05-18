@@ -3,3 +3,6 @@ build/
 
 #Swp files
 *.swp
+
+#IDE : VSCode
+.vscode/
