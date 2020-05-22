@@ -1,15 +1,21 @@
 #pragma once
 
+#include <complex.h>
 #include "Dvector.h"
 #include "WaveModel.h"
 
+#include "./../headers/GerstnerWave.h"
+#include "./../headers/ComplexVector.h"
+
+
+using namespace std;
 class PhilipsWave
 {
     public:
     // Méthodes principales
         PhilipsWave();
         ~PhilipsWave();
-        PhilipsWave(double n, double m, double Lx, double Ly, 
+        PhilipsWave(double N, double M, double Lx, double Ly, 
                     double A, double w, double V, Dvector* dir);
         PhilipsWave(PhilipsWave &&model);
         PhilipsWave(PhilipsWave const &model);
@@ -18,8 +24,8 @@ class PhilipsWave
 
         // Méthodes utiles
         double generate_xi();
-        double operator()(Dvector k, int t);
-        double get_height(Dvector k, int t);
+        double operator()(int t);
+        ComplexVector<complex<double>> get_height(int t); // TODO : IFFT 
 
         // Getters & Setters
     
@@ -31,6 +37,7 @@ class PhilipsWave
         Dvector* dir;
         double Lx, Ly;
         double xi_r, xi_i;
+		int N, M;
 };
 
 // ==== Autres fonctions utiles ====

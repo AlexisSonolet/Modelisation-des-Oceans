@@ -17,8 +17,8 @@ class PhilipsWaveModel:
             PhilipsWaveModel& operator=(PhilipsWaveModel const &model);
 
             // Méthodes utiles
-            double compute_h(Dvector x, double t);
-            double operator()(Dvector x, double t);
+            double compute_h(double t);
+			double operator()(double t);
         
         private:
             PhilipsWave* listPhilipsWaves;
