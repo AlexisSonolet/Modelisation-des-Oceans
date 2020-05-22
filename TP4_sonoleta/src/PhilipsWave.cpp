@@ -31,6 +31,9 @@ PhilipsWave::~PhilipsWave()
 PhilipsWave::PhilipsWave(double N, double M, double Lx, double Ly, 
                          double A, double w, double V, Dvector* dir)
 {
+	cout << N << endl;
+	cout << M << endl;
+	cout << N*M << endl;
     Lx, Ly = Lx, Ly;
     N, M = N, M;
     V = V;
@@ -40,7 +43,8 @@ PhilipsWave::PhilipsWave(double N, double M, double Lx, double Ly,
     kx = 2 * M_PI * N / Lx;
     kx = 2 * M_PI * M / Ly;
     dir = dir;
-    xi_r, xi_i = generate_xi(), generate_xi();  
+    xi_r, xi_i = generate_xi(), generate_xi(); 
+    L = pow(V,2)/g;	
 }
 
 PhilipsWave::PhilipsWave(PhilipsWave &&model)
@@ -96,6 +100,7 @@ double PhilipsWave::generate_xi()
 
 ComplexVector<complex<double>> PhilipsWave::get_height(int t)
 {
+	cout <<"N*M :" <<  N*M << endl;
 	ComplexVector<complex<double>> height(N*M);
 	int index = 0;
 	for(int n = -N/2; n < N/2; n++){
@@ -128,4 +133,18 @@ ComplexVector<complex<double>> PhilipsWave::get_height(int t)
 ComplexVector<complex<double>> PhilipsWave::operator()(int t)
 {
     return PhilipsWave::get_height(t);
+}
+
+void PhilipsWave::show_attributes()
+{
+	cout << "L :"<< L << endl;
+	cout << "V :"<< V << endl;
+	cout << "w :"<< w << endl;
+	cout << "A :"<< A << endl;
+	cout << "dir :"<< dir << endl;
+	cout << "Lx :"<< Lx << " Ly : "<< Ly << endl;
+	cout << "xi_r :"<< xi_r << endl;
+	cout << "xi_i :"<< xi_i << endl;
+	cout << "N :"<< N << endl;
+	cout << "M :"<<M<<endl;
 }

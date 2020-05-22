@@ -22,7 +22,10 @@ int main() {
 	Dvector dir(2);
 	dir.set(0,2);
 	dir.set(1,3);
-	PhilipsWave test_vague(2,2,4,4,1,0.5,2, &dir);
+	double N = 2;
+	double M = 2;
+	PhilipsWave test_vague(N,M,4,4,1,0.5,2, &dir);
+	test_vague.show_attributes();
 	cout << test_vague.get_height(5) << endl;	
 	
 	
