@@ -3,6 +3,8 @@
 #include "./../headers/Height.h"
 #include "./../headers/ComplexVector.h"
 #include "./../headers/FastFourier.h"
+#include "./../headers/PhilipsWave.h"
+#include "./../headers/PhilipsWaveModel.h"
 #include <complex>
 #include <typeinfo>
 using namespace std;
@@ -16,8 +18,17 @@ int main() {
 	}
 	printf("On applique la IFFT\n");
 	fft(test_croiss_decroiss, true);
+	cout << "Test get height" << endl;
+	Dvector dir(2);
+	dir.set(0,2);
+	dir.set(1,3);
+	PhilipsWave test_vague(2,2,4,4,1,0.5,2, &dir);
+	cout << test_vague.get_height(5) << endl;	
+	
+	
 	cout << test_croiss_decroiss << endl;
-
+	printf("Test Q5 (FFT d'une donnée bidimensionnelle stockée sous forme d'un tableau monodimensionnel\n");
+	ComplexVector<complex<double>> points[2];
 
 	cout << "Classe Height" << endl;
     cout << "1.1. Création d'une surface" << endl;

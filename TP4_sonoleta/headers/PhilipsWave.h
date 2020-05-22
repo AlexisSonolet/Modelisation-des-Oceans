@@ -4,9 +4,9 @@
 #include "Dvector.h"
 #include "WaveModel.h"
 
-#include "./../headers/GerstnerWave.h"
-#include "./../headers/ComplexVector.h"
-#include "./../headers/FastFourier.h"
+#include "GerstnerWave.h"
+#include "ComplexVector.h"
+#include "FastFourier.h"
 
 using namespace std;
 class PhilipsWave
@@ -25,7 +25,7 @@ class PhilipsWave
         // Méthodes utiles
         double generate_xi();
         ComplexVector<complex<double>> operator()(int t);
-        ComplexVector<complex<double>> get_height(int t); // TODO : IFFT 
+        ComplexVector<complex<double>> get_height(int t); 
 
         // Getters & Setters
     
