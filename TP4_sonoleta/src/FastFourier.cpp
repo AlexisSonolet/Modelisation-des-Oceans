@@ -45,8 +45,6 @@ void fft(ComplexVector<complex<double>> &vect, bool inverse)
 			vect.conjug();
 			vect /= n;
 		}	
-
-	
 	}
 }
 
