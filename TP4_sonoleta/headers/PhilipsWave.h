@@ -28,7 +28,9 @@ class PhilipsWave
         ComplexVector<complex<double>> get_height(int t); 
 
         // Getters & Setters
-    
+		
+		// For debug
+		void show_attributes();
     private:
         double L;
         double V;
@@ -37,7 +39,7 @@ class PhilipsWave
         Dvector* dir;
         double Lx, Ly;
         double xi_r, xi_i;
-		int N, M;
+		double N, M;
 };
 
 // ==== Autres fonctions utiles ====
