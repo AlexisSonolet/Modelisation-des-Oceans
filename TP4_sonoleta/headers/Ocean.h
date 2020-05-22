@@ -10,7 +10,15 @@ class Ocean
     public:
         // Méthodes de base
         Ocean();
+        Ocean(double Lx, double Ly, int nx, int ny, WaveModel* Model);
         ~Ocean();
+
+        // Setters
+        void set_t(double t);
+        void set_params(double Lx, double Ly, int nx, int ny);
+        void set_model(WaveModel* Model);
+
+        // Méthodes spécifiques
         void generateHeight(double value);
         void compute(double t);
         Dvector* gl_vertices();

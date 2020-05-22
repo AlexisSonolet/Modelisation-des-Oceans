@@ -6,7 +6,7 @@ class Dvector
 {
     public:
         Dvector();
-        Dvector(int size, int value=0);
+        Dvector(int size, double value=0);
         Dvector(Dvector const& vect);
         Dvector(std::string fichier);
         ~Dvector();

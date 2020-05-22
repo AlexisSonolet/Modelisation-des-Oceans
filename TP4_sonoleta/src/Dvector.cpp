@@ -14,7 +14,7 @@ Dvector::Dvector()
     v_size = 0;
 };
 
-Dvector::Dvector(int size, int value)
+Dvector::Dvector(int size, double value)
 {
     v = new double[size]; // v vecteur de taille définie
     v_size = size;
