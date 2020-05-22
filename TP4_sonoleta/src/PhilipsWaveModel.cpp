@@ -65,16 +65,16 @@ PhilipsWaveModel& PhilipsWaveModel::operator=(PhilipsWaveModel const &model)
 
 // === Méthodes utiles ===
 
-double PhilipsWaveModel::compute_h(double t)
+ComplexVector<complex<double>> PhilipsWaveModel::compute_h(double t)
 {
-    double h = 0;
+    ComplexVector<complex<double>> h = 0;
     for (int i = 0; i < size; i++) {
         h += listPhilipsWaves[i].get_height(t);
     }
     return h;
 }
 
-double PhilipsWaveModel::operator()(double t)
+ComplexVector<complex<double>> PhilipsWaveModel::operator()(double t)
 {
     return PhilipsWaveModel::compute_h(t);
 }

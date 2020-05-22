@@ -17,8 +17,8 @@ class PhilipsWaveModel:
             PhilipsWaveModel& operator=(PhilipsWaveModel const &model);
 
             // Méthodes utiles
-            double compute_h(double t);
-			double operator()(double t);
+            ComplexVector<complex<double>> compute_h(double t);
+			ComplexVector<complex<double>> operator()(double t);
         
         private:
             PhilipsWave* listPhilipsWaves;
