@@ -110,7 +110,8 @@ ComplexVector<complex<double>> PhilipsWave::get_height(int t)
 			double mod_k = sqrt(k*k);
 			double Ph_k = (A * exp(-1/(pow(mod_k*L, 2))) / pow(mod_k, 2)) * pow(k*(*dir), 2);
 			double Pmh_k = (A * exp(-1/(pow(mod_k*L, 2))) / pow(mod_k, 2)) * pow(-k*(*dir), 2);
-			double omega = compute_freq(&k);
+			complex<double> omega(0,0);
+			omega.real(compute_freq(&k));
 			complex<double> height_1 = sqrt(Ph_k/2)*((xi_r + i*xi_i)) * exp(i*omega*t);
 			complex<double> height_2 = sqrt(Pmh_k/2)*((xi_r - i*xi_i)) * exp(-i*omega*t);
 			//height_1 *= ((xi_r + i*xi_i)) * exp(i*omega*t);
