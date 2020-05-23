@@ -34,17 +34,20 @@ PhilipsWave::PhilipsWave(double N, double M, double Lx, double Ly,
 	cout << N << endl;
 	cout << M << endl;
 	cout << N*M << endl;
-    Lx, Ly = Lx, Ly;
-    N, M = N, M;
-    V = V;
-    A = A;
-    w = w;
+    this->Lx = Lx;
+	this->Ly = Ly;
+    this->N = N;
+	this->M = M;
+	this-> V = V;
+	this-> A = A;
+	this-> w = w;
     double kx, ky;
     kx = 2 * M_PI * N / Lx;
     kx = 2 * M_PI * M / Ly;
-    dir = dir;
-    xi_r, xi_i = generate_xi(), generate_xi(); 
-    L = pow(V,2)/g;	
+    this->dir = dir;
+    this->xi_r = generate_xi();
+	this->xi_i = generate_xi(); 
+    this->L = pow(V,2)/g;	
 }
 
 PhilipsWave::PhilipsWave(PhilipsWave &&model)
@@ -103,27 +106,31 @@ ComplexVector<complex<double>> PhilipsWave::get_height(int t)
 	cout <<"N*M :" <<  N*M << endl;
 	ComplexVector<complex<double>> height(N*M);
 	int index = 0;
+	Dvector k(2);
+	printf("%f\n", M_PI);
 	for(int n = -N/2; n < N/2; n++){
 	   for(int m = -M/2; m < M/2; m++){
-			Dvector k(2);
 			k.set(0,2*M_PI*n/Lx);
 			k.set(1,2*M_PI*m/Ly);		
 			if (k.isnull()) {
-				return 0;
+				height.set(index, complex<double>(0,0));
+				index++;				
 			}
-			complex<double> i = sqrt(-1);
-			double mod_k = sqrt(k*k);
-			double Ph_k = (A * exp(-1/(pow(mod_k*L, 2))) / pow(mod_k, 2)) * pow(k*(*dir), 2);
-			double Pmh_k = (A * exp(-1/(pow(mod_k*L, 2))) / pow(mod_k, 2)) * pow(-k*(*dir), 2);
-			//complex<double> omega(0,0);
-			//omega.real(compute_freq(&k));
-			double omega = compute_freq(&k);
-			complex<double> height_1 = sqrt(Ph_k/2)*((xi_r + i*xi_i)) * exp(i*omega*(double)t);
-			complex<double> height_2 = sqrt(Pmh_k/2)*((xi_r - i*xi_i)) * exp(-i*omega*(double)t);
-			//height_1 *= ((xi_r + i*xi_i)) * exp(i*omega*t);
-			//height_2 *= ((xi_r - i*xi_i)) * exp(-i*omega*t);
-			height.set(index, height_1 + height_2); 	
-			
+			else{
+				complex<double> i = sqrt(-1);
+				double mod_k = sqrt(k*k);
+				double Ph_k = (A * exp(-1/(pow(mod_k*L, 2))) / pow(mod_k, 2)) * pow(k*(*dir), 2);
+				double Pmh_k = (A * exp(-1/(pow(mod_k*L, 2))) / pow(mod_k, 2)) * pow(-k*(*dir), 2);
+				//complex<double> omega(0,0);
+				//omega.real(compute_freq(&k));
+				double omega = compute_freq(&k);
+				complex<double> height_1 = sqrt(Ph_k/2)*((xi_r + i*xi_i)) * exp(i*omega*(double)t);
+				complex<double> height_2 = sqrt(Pmh_k/2)*((xi_r - i*xi_i)) * exp(-i*omega*(double)t);
+				//height_1 *= ((xi_r + i*xi_i)) * exp(i*omega*t);
+				//height_2 *= ((xi_r - i*xi_i)) * exp(-i*omega*t);
+				height.set(index, height_1 + height_2);
+				index++;	
+			}	
 	   }
 	}
 	fft(height, true);

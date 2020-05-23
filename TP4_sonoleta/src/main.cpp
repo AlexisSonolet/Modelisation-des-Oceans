@@ -24,12 +24,16 @@ int main() {
 	dir.set(1,3);
 	double N = 2;
 	double M = 2;
-	PhilipsWave test_vague(N,M,4,4,1,0.5,2, &dir);
+	//PhilipsWave test_vague;
+	
+	PhilipsWave test_vague(N,M, 4, 4, 1, 0.5, 1, &dir);
 	test_vague.show_attributes();
-	cout << test_vague.get_height(5) << endl;	
+	for(int t = 0; t < 4; t++){
+		ComplexVector<complex<double>> height = test_vague.get_height(t);
+		cout << "get_height "<< t<<endl<< height << endl;	
+	}
 	
-	
-	cout << test_croiss_decroiss << endl;
+	//cout << test_croiss_decroiss << endl;
 	printf("Test Q5 (FFT d'une donnée bidimensionnelle stockée sous forme d'un tableau monodimensionnel\n");
 	ComplexVector<complex<double>> points[2];
 
