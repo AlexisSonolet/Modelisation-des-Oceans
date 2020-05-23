@@ -117,10 +117,12 @@ ComplexVector<complex<double>> PhilipsWave::get_height(int t)
 				index++;				
 			}
 			else{
-				complex<double> i = sqrt(-1);
-				double mod_k = sqrt(k*k);
-				double Ph_k = (A * exp(-1/(pow(mod_k*L, 2))) / pow(mod_k, 2)) * pow(k*(*dir), 2);
-				double Pmh_k = (A * exp(-1/(pow(mod_k*L, 2))) / pow(mod_k, 2)) * pow(-k*(*dir), 2);
+				complex<double> i = -1;
+				i = sqrt(i);
+				double mod_k = sqrt(pow(k.get(0),2) + pow(k.get(1),2));
+				//pow(k*(*dir),2)
+				double Ph_k = (A * exp(-1/(pow(mod_k*L, 2))) / pow(mod_k, 2)) * pow(k.get(0)*(*dir).get(0) + k.get(1) * (*dir).get(1), 2);
+				double Pmh_k = (A * exp(-1/(pow(mod_k*L, 2))) / pow(mod_k, 2)) * pow(-k.get(0)*(*dir).get(0) - k.get(1)*(*dir).get(1), 2);
 				//complex<double> omega(0,0);
 				//omega.real(compute_freq(&k));
 				double omega = compute_freq(&k);
