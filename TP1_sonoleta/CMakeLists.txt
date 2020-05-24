@@ -8,10 +8,15 @@ project(Dvector)
 set(SRCS
     main.cpp
     src/Dvector.cpp
+	test/test_string.cpp
+	test/test_construct.cpp
+	test/test_copy.cpp
+	test/test_random.cpp
     )
     
 set(HEADERS
     src/Dvector.h
+	test.h
     )
 
 # Notre exécutable

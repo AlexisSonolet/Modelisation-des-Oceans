@@ -3,12 +3,14 @@
 
 Dvector::Dvector()
 {
+	std::cout << "Appel du constructeur par defaut" << std::endl;
     v = new double[0]; // v vecteur de taille définie
     v_size = 0;
 };
 
 Dvector::Dvector(int size, int value)
 {
+	std::cout << "Appel du constructeur" << std::endl;
     v = new double[size]; // v vecteur de taille définie
     v_size = size;
     for (int i = 0; i < size; i++)
@@ -17,6 +19,7 @@ Dvector::Dvector(int size, int value)
 
 Dvector::Dvector(Dvector const& vect)
 {
+	std::cout << "Appel du constructeur par recopie" << std::endl;
     v = new double[vect.v_size];
     v_size = vect.v_size;
     for (int i = 0; i < vect.v_size; i++)
@@ -66,6 +69,7 @@ Dvector::Dvector(std::string fichier)
 
 Dvector::~Dvector()
 {
+	std::cout << "Appel du destructeur" << std::endl;
     delete[] v;
 };
 
