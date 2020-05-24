@@ -98,9 +98,9 @@ double PhilipsWave::generate_xi()
     return d(gen);
 }
 
-ComplexVector<complex<double>> PhilipsWave::get_height(int t)
+ComplexVector<complex<double>> PhilipsWave::get_height(double t)
 {
-	cout <<"N*M :" <<  N*M << endl;
+	// cout <<"N*M :" <<  N*M << endl;
 	ComplexVector<complex<double>> height(N*M);
 	int index = 0;
 	Dvector k(2);
@@ -135,7 +135,7 @@ ComplexVector<complex<double>> PhilipsWave::get_height(int t)
     return height;
 }
 
-ComplexVector<complex<double>> PhilipsWave::operator()(int t)
+ComplexVector<complex<double>> PhilipsWave::operator()(double t)
 {
     return PhilipsWave::get_height(t);
 }

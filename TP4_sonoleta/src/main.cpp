@@ -22,15 +22,15 @@ int main() {
 	fft(test_croiss_decroiss, true);
 	cout << "Test get height" << endl;
 	Dvector dir(2);
-	dir.set(0,2);
-	dir.set(1,3);
+	dir.set(0,0.5);
+	dir.set(1,2.5);
 	double N = 2;
 	double M = 2;
 	//PhilipsWave test_vague;
 	
-	PhilipsWave test_vague(N,M, 4, 4, 1, 0.5, 1, &dir);
+	PhilipsWave test_vague(N,M, 1, 1, 10, 0.5, 1, &dir);
 	test_vague.show_attributes();
-	for(int t = 0; t < 4; t++){
+	for(double t = 0; t < 0.16; t+=0.05){
 		cout << "T VAUT : "<< t << endl;
 		ComplexVector<complex<double>> height = test_vague.get_height(t);
 		cout << "get_height "<< t << endl << height << endl;	
