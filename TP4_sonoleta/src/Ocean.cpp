@@ -80,5 +80,14 @@ Dvector* Ocean::gl_vertices()
 
 void Ocean::plot(std::string path)
 {
-    // TODO
+    ofstream file;
+    file.open(path + "plotting_ocean.dat");
+    for (int x = 0; x < nx; x++) {
+        file << "# Ligne n°" + to_string(x) + "\n";
+        for (int y = 0; y < ny; y++) {
+            file << to_string(x) +" "+ to_string(y) +" "+ to_string(H->get(x*nx+y)) +"\n";
+        }
+        file << "\n"; // Ligne blanche pour séparer les lignes
+    }
+    file.close();
 }

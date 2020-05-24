@@ -31,5 +31,6 @@ class Ocean
         int ny; // nombre de points de discrétisation selon y
         double t; // le temps courant
         Dvector* H; // vecteur contenant la hauteur de la houle
+        double*** vertices;
         WaveModel* Model; // modèle utilisé
 };
