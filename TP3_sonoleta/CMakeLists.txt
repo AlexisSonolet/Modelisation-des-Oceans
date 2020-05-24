@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.14)
+cmake_minimum_required(VERSION 3.10)
 
 project(TP2)
 
@@ -12,6 +12,8 @@ set(SRCS
     src/WaveModel.cpp
     src/GerstnerWave.cpp
     src/GerstnerWaveModel.cpp
+	test/test_height.cpp
+	test/test_gerstner.cpp
     )
 
 set(HEADERS
@@ -20,6 +22,7 @@ set(HEADERS
     headers/WaveModel.h
     headers/GerstnerWave.h
     headers/GerstnerWaveModel.h
+	test/test.h
     )
     
 add_executable(main ${SRCS} ${HEADERS})
