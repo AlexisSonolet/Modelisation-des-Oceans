@@ -104,6 +104,18 @@ double Dvector::get(int index) const
     }
 }
 
+double & Dvector::operator()(int i) const
+{
+	if(i<0 || i > v_size -1){
+		throw std::invalid_argument("Out of range");
+	}
+	else{
+		return v[i];
+	}
+}
+
+
+
 void Dvector::set(int index, double value)
 {
     if (index >= v_size) {

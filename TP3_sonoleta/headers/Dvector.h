@@ -14,6 +14,7 @@ class Dvector
         int size() const;
         void fillRandomly();
         double get(int index) const;
+		double & operator()(int i) const;
         void set(int index, double value);
         void set_size(int size);
         void set_v(double* vect);
