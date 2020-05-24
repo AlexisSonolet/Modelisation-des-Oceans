@@ -31,9 +31,6 @@ PhilipsWave::~PhilipsWave()
 PhilipsWave::PhilipsWave(double N, double M, double Lx, double Ly, 
                          double A, double w, double V, Dvector* dir)
 {
-	cout << N << endl;
-	cout << M << endl;
-	cout << N*M << endl;
     this->Lx = Lx;
 	this->Ly = Ly;
     this->N = N;
@@ -107,7 +104,6 @@ ComplexVector<complex<double>> PhilipsWave::get_height(int t)
 	ComplexVector<complex<double>> height(N*M);
 	int index = 0;
 	Dvector k(2);
-	printf("%f\n", M_PI);
 	for(int n = -N/2; n < N/2; n++){
 	   for(int m = -M/2; m < M/2; m++){
 			k.set(0,2*M_PI*n/Lx);
