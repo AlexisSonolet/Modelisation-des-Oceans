@@ -31,6 +31,7 @@ int main() {
 	PhilipsWave test_vague(N,M, 4, 4, 1, 0.5, 1, &dir);
 	test_vague.show_attributes();
 	for(int t = 0; t < 4; t++){
+		cout << "T VAUT : "<< t << endl;
 		ComplexVector<complex<double>> height = test_vague.get_height(t);
 		cout << "get_height "<< t << endl << height << endl;	
 	}
