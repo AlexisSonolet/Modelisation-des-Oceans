@@ -26,8 +26,8 @@ class PhilipsWave
 
         // Méthodes utiles
         double generate_xi();
-        ComplexVector<complex<double>> operator()(int t);
-        ComplexVector<complex<double>> get_height(int t); 
+        ComplexVector<complex<double>> operator()(double t);
+        ComplexVector<complex<double>> get_height(double t); 
 
         // Getters & Setters
 		
