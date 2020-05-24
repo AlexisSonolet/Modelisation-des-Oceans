@@ -7,6 +7,7 @@ project(TP2)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_FLAGS"-g -Wall")
 set(CMAKE_BUILD_TYPE Debug)
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall -Wextra -std=c++11")
 
 set(SRCS
     src/main.cpp
