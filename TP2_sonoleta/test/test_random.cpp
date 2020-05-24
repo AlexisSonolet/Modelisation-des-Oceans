@@ -1,4 +1,4 @@
-#include "../test.h"
+#include "./test.h"
 #include "../src/Dvector.h"
 #include <assert.h>
 #include <iostream>

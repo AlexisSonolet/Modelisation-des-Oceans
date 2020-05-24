@@ -14,11 +14,13 @@ class Dvector
         int size() const;
         void fillRandomly();
         double get(int index) const;
+		double & operator()(int i) const;
         void set(int index, double value);
         void set_size(int size);
         void set_v(double* vect);
         double* get_v() const;
         Dvector operator=(const Dvector &vect);
+		Dvector assign(const Dvector &vect);
         Dvector operator+=(const Dvector &vect);
         Dvector operator-=(const Dvector &vect);
         Dvector operator*=(int i);

@@ -76,7 +76,7 @@ Dvector::~Dvector()
 
 void Dvector::display(std::ostream& str)
 {
-    for (long unsigned int i = 0; i< v_size; i++) {
+    for (long unsigned int i = 0; i < v_size; i++) {
         str << v[i] << std::endl;
     }
 };
@@ -102,6 +102,16 @@ double Dvector::get(int index) const
     } else {
         return v[index];
     }
+}
+
+double & Dvector::operator()(int i) const
+{
+	if(i<0 || i > v_size -1){
+		throw std::invalid_argument("Out of range");
+	}
+	else{
+		return v[i];
+	}
 }
 
 void Dvector::set(int index, double value)
@@ -137,6 +147,21 @@ Dvector Dvector::operator=(const Dvector &vect)
     memcpy(v, vect.v, v_size * sizeof(double));
 
     return *this;
+}
+
+Dvector Dvector::assign(const Dvector &vect)
+{
+	// Si le vecteur a déjà été assigné, il faut le libérer
+	delete[] v;
+	v_size = vect.v_size;
+	v = new double[v_size];
+	for(int i = 0; i < v_size; i++)
+	{
+		(*this).set(i, vect(i));
+	}
+
+	return *this;
+
 }
 
 Dvector Dvector::operator+=(const Dvector &vect)
