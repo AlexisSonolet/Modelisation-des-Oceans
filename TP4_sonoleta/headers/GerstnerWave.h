@@ -32,7 +32,6 @@ class GerstnerWave
         double frequency;
 };
 
-#define G 9.81
 #define W_TYPE 0 // type (entre 0 et 2) utilisé pour le type 3 de compute_freq
 
 double module(Dvector* dir);

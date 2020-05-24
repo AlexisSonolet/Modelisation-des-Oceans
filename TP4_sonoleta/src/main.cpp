@@ -59,5 +59,11 @@ int main() {
 
     // Question 3 : Gerstner
     cout << "Classe GerstnerWave" << endl;
+
+	// Test de la fonction module (teste aussi la multiplication)
+	Dvector dirr(2);
+	dirr.set(0, 3);
+	dirr.set(1, 4);
+	cout << "Mod = " << module(&dirr) << endl;
     return 0;
 }

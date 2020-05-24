@@ -144,13 +144,13 @@ double compute_freq(Dvector* dir, int type, double D, double L, double T)
     switch (type)
     {
         case 0:
-            w = sqrt(G * k);
+            w = sqrt(g * k);
             break;
         case 1:
-            w = sqrt(G * k * tanh(k * D));
+            w = sqrt(g * k * tanh(k * D));
             break;
         case 2:
-            w = sqrt(G * k * (1 + k*k*L*L));
+            w = sqrt(g * k * (1 + k*k*L*L));
             break;
         case 3:
             if (W_TYPE == 3) {
