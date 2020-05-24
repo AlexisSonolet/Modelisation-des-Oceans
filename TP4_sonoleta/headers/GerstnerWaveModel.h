@@ -6,6 +6,12 @@
 #include "ComplexVector.h"
 using Dvector = ComplexVector<double>;
 
+/*!
+ * \file GerstnerWaveModel.h
+ * Classe du modèle des vagues de Gerstner, sert à stocker une liste de vagues
+ *
+ */
+
 class GerstnerWaveModel:
     public WaveModel
     {
@@ -22,8 +28,8 @@ class GerstnerWaveModel:
             double operator()(Dvector x, int t);
             void setWave(GerstnerWave wave, int index);
             void setWave(int index, double A, double phi, Dvector* dir, double freq);
-        
+
         private:
-            GerstnerWave* listGerstnerWaves;
+            GerstnerWave* listGerstnerWaves; /*< Liste des vagues */
             int size;
 };

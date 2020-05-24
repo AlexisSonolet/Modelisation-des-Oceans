@@ -1,13 +1,6 @@
 #include "Dvector.h"
 #include <fstream>
 
-/**
- *
- * Méthodes de la classe Dvector, création sans modification précise d'une case de Dvector
- * Constructeurs par défaut, destructeur et constructeur par recopie, ainsi que par copie de fichier implémentés. 
- *
- */
-
 Dvector::Dvector()
 {
 	std::cout << "Appel du constructeur par defaut" << std::endl;

@@ -1,0 +1,93 @@
+\hypertarget{_gerstner_wave_8h}{}\section{Référence du fichier /home/louis/\+Documents/2\+A/\+M\+P\+C/\+C\+P\+P/\+T\+P3\+\_\+sonoleta/headers/\+Gerstner\+Wave.h}
+\label{_gerstner_wave_8h}\index{/home/louis/\+Documents/2\+A/\+M\+P\+C/\+C\+P\+P/\+T\+P3\+\_\+sonoleta/headers/\+Gerstner\+Wave.\+h@{/home/louis/\+Documents/2\+A/\+M\+P\+C/\+C\+P\+P/\+T\+P3\+\_\+sonoleta/headers/\+Gerstner\+Wave.\+h}}
+{\ttfamily \#include \char`\"{}Dvector.\+h\char`\"{}}\newline
+Graphe des dépendances par inclusion de Gerstner\+Wave.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{_gerstner_wave_8h__incl}
+\end{center}
+\end{figure}
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{_gerstner_wave_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_gerstner_wave}{Gerstner\+Wave}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_gerstner_wave_8h_aed9ea78689ecce0b7264c02c7f8a9a54}\label{_gerstner_wave_8h_aed9ea78689ecce0b7264c02c7f8a9a54}} 
+\#define {\bfseries G}~9.\+81 /$\ast$$<$ definition de G la constante gravitationelle $\ast$/
+\item 
+\mbox{\Hypertarget{_gerstner_wave_8h_a0b0fe599d70af5e8db73c78bc575bdb2}\label{_gerstner_wave_8h_a0b0fe599d70af5e8db73c78bc575bdb2}} 
+\#define {\bfseries W\+\_\+\+T\+Y\+PE}~0
+\end{DoxyCompactItemize}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{_gerstner_wave_8h_aa6e95f4a08ffe3ce9c1086ba0e72dfca}{module} (\hyperlink{class_dvector}{Dvector} $\ast$dir)
+\begin{DoxyCompactList}\small\item\em Calcule le module du vecteur d\textquotesingle{}onde. \end{DoxyCompactList}\item 
+double \hyperlink{_gerstner_wave_8h_a9ec20622af66a127196b241dfb5f9416}{compute\+\_\+freq} (\hyperlink{class_dvector}{Dvector} $\ast$dir, int type=0, double D=0, double L=0, double T=1)
+\begin{DoxyCompactList}\small\item\em Calcule la fréquence en fonction de la direction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+classe des vague de Gerstner avec les méthodes associées 
+
+\subsection{Documentation des fonctions}
+\mbox{\Hypertarget{_gerstner_wave_8h_a9ec20622af66a127196b241dfb5f9416}\label{_gerstner_wave_8h_a9ec20622af66a127196b241dfb5f9416}} 
+\index{Gerstner\+Wave.\+h@{Gerstner\+Wave.\+h}!compute\+\_\+freq@{compute\+\_\+freq}}
+\index{compute\+\_\+freq@{compute\+\_\+freq}!Gerstner\+Wave.\+h@{Gerstner\+Wave.\+h}}
+\subsubsection{\texorpdfstring{compute\+\_\+freq()}{compute\_freq()}}
+{\footnotesize\ttfamily double compute\+\_\+freq (\begin{DoxyParamCaption}\item[{\hyperlink{class_dvector}{Dvector} $\ast$}]{dir,  }\item[{int}]{type,  }\item[{double}]{D,  }\item[{double}]{L,  }\item[{double}]{T }\end{DoxyParamCaption})}
+
+
+
+Calcule la fréquence en fonction de la direction. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em dir} & \+: le vecteur d\textquotesingle{}onde \\
+\hline
+{\em type} & \+: le cas dans lequel on se trouve \textbackslash{} param D \+: distance du sol vis à vis du niveau moyen de l\textquotesingle{}océan \\
+\hline
+{\em T} & \+: période de répétition des vagues\\
+\hline
+\end{DoxyParams}
+Renvoie la fréquence en fonction de plusieurs paramètres 
+\begin{DoxyParams}{Paramètres}
+{\em dir} & \+: vecteur d\textquotesingle{}ondes \\
+\hline
+{\em type} & \+: 0 \+: cas de la houle 1 \+: eau peu profonde 2 \+: avec la tension de surface 3 \+: Na\+Ni \\
+\hline
+{\em D} & \+: distance du sol au niveau moyen \\
+\hline
+{\em L} & \+: tension de surface (?) \\
+\hline
+{\em T} & \+: période de répétition des variations de hauteur \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_gerstner_wave_8h_aa6e95f4a08ffe3ce9c1086ba0e72dfca}\label{_gerstner_wave_8h_aa6e95f4a08ffe3ce9c1086ba0e72dfca}} 
+\index{Gerstner\+Wave.\+h@{Gerstner\+Wave.\+h}!module@{module}}
+\index{module@{module}!Gerstner\+Wave.\+h@{Gerstner\+Wave.\+h}}
+\subsubsection{\texorpdfstring{module()}{module()}}
+{\footnotesize\ttfamily double module (\begin{DoxyParamCaption}\item[{\hyperlink{class_dvector}{Dvector} $\ast$}]{dir }\end{DoxyParamCaption})}
+
+
+
+Calcule le module du vecteur d\textquotesingle{}onde. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em dir} & \+: le vecteur d\textquotesingle{}onde \\
+\hline
+\end{DoxyParams}

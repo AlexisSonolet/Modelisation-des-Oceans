@@ -1,0 +1,5 @@
+<map id="Graphe hiérarchique des classes" name="Graphe hiérarchique des classes">
+<area shape="rect" id="node1" href="$class_wave_model.html" title="WaveModel" alt="" coords="5,31,96,57"/>
+<area shape="rect" id="node2" href="$class_gerstner_wave_model.html" title="GerstnerWaveModel" alt="" coords="144,5,285,32"/>
+<area shape="rect" id="node3" href="$class_philips_wave_model.html" title="PhilipsWaveModel" alt="" coords="149,56,280,83"/>
+</map>

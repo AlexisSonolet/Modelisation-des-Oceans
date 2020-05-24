@@ -1,0 +1,56 @@
+\hypertarget{class_ocean}{}\section{Référence de la classe Ocean}
+\label{class_ocean}\index{Ocean@{Ocean}}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_ocean_a5bf2686e16107378f2a934941ea3a085}{Ocean} (double Lx, double Ly, int nx, int ny, \hyperlink{class_wave_model}{Wave\+Model} $\ast$Model)
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ocean_aeecea110bc6527de046f41c94a3c0a83}\label{class_ocean_aeecea110bc6527de046f41c94a3c0a83}} 
+void {\bfseries set\+\_\+t} (double t)
+\item 
+\mbox{\Hypertarget{class_ocean_aaa44e553e45f6c7f1cbc9c005068655f}\label{class_ocean_aaa44e553e45f6c7f1cbc9c005068655f}} 
+void {\bfseries set\+\_\+params} (double Lx, double Ly, int nx, int ny)
+\item 
+\mbox{\Hypertarget{class_ocean_afc6a1506cf7c4f663ad34fff663febd0}\label{class_ocean_afc6a1506cf7c4f663ad34fff663febd0}} 
+void {\bfseries set\+\_\+model} (\hyperlink{class_wave_model}{Wave\+Model} $\ast$Model)
+\item 
+\mbox{\Hypertarget{class_ocean_ac78947768292df75ce929d4845123d01}\label{class_ocean_ac78947768292df75ce929d4845123d01}} 
+void \hyperlink{class_ocean_ac78947768292df75ce929d4845123d01}{generate\+Height} (double value)
+\begin{DoxyCompactList}\small\item\em Génération hauteur \textbackslash{} param value \+: la valeur initiale de la hauteur Genere un océan avec la même hauteur value partout dans l\textquotesingle{}espace. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ocean_aeaf68def6babcd8963ed8df3b0a2df35}\label{class_ocean_aeaf68def6babcd8963ed8df3b0a2df35}} 
+void \hyperlink{class_ocean_aeaf68def6babcd8963ed8df3b0a2df35}{compute} (double t)
+\begin{DoxyCompactList}\small\item\em Calcul hauteur \textbackslash{} param t \+: le temps Calcule le champ des hauteurs à un instant t. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ocean_aa9c06f386632f1fb33d61e35a3b17c28}\label{class_ocean_aa9c06f386632f1fb33d61e35a3b17c28}} 
+\hyperlink{class_dvector}{Dvector} $\ast$ \hyperlink{class_ocean_aa9c06f386632f1fb33d61e35a3b17c28}{gl\+\_\+vertices} ()
+\begin{DoxyCompactList}\small\item\em Génération Open\+GL. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ocean_ae106ac53c5012964169d08eb5f13b571}\label{class_ocean_ae106ac53c5012964169d08eb5f13b571}} 
+void {\bfseries plot} (std\+::string path)
+\end{DoxyCompactItemize}
+
+
+\subsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{class_ocean_a5bf2686e16107378f2a934941ea3a085}\label{class_ocean_a5bf2686e16107378f2a934941ea3a085}} 
+\index{Ocean@{Ocean}!Ocean@{Ocean}}
+\index{Ocean@{Ocean}!Ocean@{Ocean}}
+\subsubsection{\texorpdfstring{Ocean()}{Ocean()}}
+{\footnotesize\ttfamily Ocean\+::\+Ocean (\begin{DoxyParamCaption}\item[{double}]{Lx,  }\item[{double}]{Ly,  }\item[{int}]{nx,  }\item[{int}]{ny,  }\item[{\hyperlink{class_wave_model}{Wave\+Model} $\ast$}]{Model }\end{DoxyParamCaption})}
+
+
+
+Constructeur. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em Lx,Ly} & \+: taille du domaine \\
+\hline
+{\em nx,ny} & \+: nombre de points de discrétisation \\
+\hline
+{\em Model} & \+: le modèle utilisé pour la modélisation \\
+\hline
+\end{DoxyParams}
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+/home/louis/\+Documents/2\+A/\+M\+P\+C/\+C\+P\+P/\+T\+P4\+\_\+sonoleta/headers/\hyperlink{_ocean_8h}{Ocean.\+h}\item 
+/home/louis/\+Documents/2\+A/\+M\+P\+C/\+C\+P\+P/\+T\+P4\+\_\+sonoleta/src/Ocean.\+cpp\end{DoxyCompactItemize}
