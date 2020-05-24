@@ -14,7 +14,7 @@ class GerstnerWave
         GerstnerWave(GerstnerWave const &model);
         GerstnerWave operator=(GerstnerWave &&model);
         GerstnerWave operator=(GerstnerWave const &model);
-        double operator()(Dvector x, int t);
+        double operator()(Dvector x, double t);
 
         // Setters & Getters
         double getAmplitude();

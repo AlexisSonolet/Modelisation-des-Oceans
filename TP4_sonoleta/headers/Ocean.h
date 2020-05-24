@@ -21,8 +21,8 @@ class Ocean
 
         // Méthodes spécifiques
         void generateHeight(double value);
-        void compute(double t);
-        Dvector* gl_vertices();
+        void compute(double dt);
+        float* getVertices();
         void plot(std::string path);
 
     private:
@@ -32,6 +32,6 @@ class Ocean
         int ny; // nombre de points de discrétisation selon y
         double t; // le temps courant
         Dvector* H; // vecteur contenant la hauteur de la houle
-        double*** vertices;
+        // double*** vertices;
         WaveModel* Model; // modèle utilisé
 };

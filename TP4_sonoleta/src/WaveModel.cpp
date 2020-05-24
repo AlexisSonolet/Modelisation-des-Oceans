@@ -68,3 +68,4 @@ double WaveModel::getAverageWaveLength() {
 double WaveModel::getAjustWaveHeight() {
     return ajustWaveHeight;
 }
+

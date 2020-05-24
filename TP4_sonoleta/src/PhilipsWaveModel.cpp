@@ -13,51 +13,44 @@ using namespace std;
 
 PhilipsWaveModel::PhilipsWaveModel()
 {
-    listPhilipsWaves = new PhilipsWave[0];
-    size = 0;
+    wave = new PhilipsWave;
+}
+
+PhilipsWaveModel::PhilipsWaveModel(double N, double M, double Lx, double Ly, 
+                                   double A, double w, double V, Dvector* dir)
+{
+    wave = new PhilipsWave(N, M, Lx, Ly, A, w, V, dir);
 }
 
 PhilipsWaveModel::~PhilipsWaveModel()
 {
-    for (int i = 0; i < size; i++) {
-        delete &listPhilipsWaves[i];
-    }
-    delete[] listPhilipsWaves;
+    delete wave;
 }
 
 PhilipsWaveModel::PhilipsWaveModel(PhilipsWaveModel &&model)
 {
-    size = model.size;
-    listPhilipsWaves = model.listPhilipsWaves;
-    model.listPhilipsWaves = nullptr;
+    wave = model.wave;
+    model.wave = nullptr;
 }
 
 PhilipsWaveModel::PhilipsWaveModel(PhilipsWaveModel const &model)
 {
-    size = model.size;
-    listPhilipsWaves = new PhilipsWave[size];
-    for (int i = 0; i < size; i++) {
-        listPhilipsWaves[i] = PhilipsWave(model.listPhilipsWaves[i]);
-    }
+    wave = model.wave;
 }
 
 PhilipsWaveModel& PhilipsWaveModel::operator=(PhilipsWaveModel &&model)
 {
-    delete[] listPhilipsWaves;
-    size = model.size;
-    listPhilipsWaves = model.listPhilipsWaves;
-    model.listPhilipsWaves = nullptr;
+    delete wave;
+    wave = model.wave;
+    model.wave = nullptr;
 
     return *this;
 }
 
 PhilipsWaveModel& PhilipsWaveModel::operator=(PhilipsWaveModel const &model)
 {
-    delete[] listPhilipsWaves;
-    size = model.size;
-    for (int i = 0; i< size; i++) {
-        listPhilipsWaves[i] = PhilipsWave(model.listPhilipsWaves[i]);
-    }
+    delete wave;
+    wave = model.wave;
 
     return *this;
 }
@@ -68,13 +61,14 @@ PhilipsWaveModel& PhilipsWaveModel::operator=(PhilipsWaveModel const &model)
 ComplexVector<complex<double>> PhilipsWaveModel::compute_h(double t)
 {
     ComplexVector<complex<double>> h = 0;
-    for (int i = 0; i < size; i++) {
-        h += listPhilipsWaves[i].get_height(t);
-    }
+    h = wave->get_height(t);
     return h;
 }
 
-ComplexVector<complex<double>> PhilipsWaveModel::operator()(double t)
+
+// === Compute height ===
+
+Dvector PhilipsWaveModel::operator()(double t)
 {
-    return PhilipsWaveModel::compute_h(t);
+    return wave->compute_h(t);
 }

@@ -12,6 +12,8 @@ GerstnerWaveModel::GerstnerWaveModel()
 {
     listGerstnerWaves = new GerstnerWave[0];
     size = 0;
+    Lx, Ly = 1, 1;
+    nx, ny = 0, 0;
 }
 
 GerstnerWaveModel::~GerstnerWaveModel() 
@@ -22,10 +24,12 @@ GerstnerWaveModel::~GerstnerWaveModel()
     delete[] listGerstnerWaves;
 }
 
-GerstnerWaveModel::GerstnerWaveModel(int n)
+GerstnerWaveModel::GerstnerWaveModel(int n, double Lx, double Ly, int nx, int ny)
 {
     listGerstnerWaves = new GerstnerWave[n];
     size = n;
+    Lx, Ly = Lx, Ly;
+    nx, ny = nx, ny;
 }
 
 GerstnerWaveModel::GerstnerWaveModel(GerstnerWaveModel &&model)
@@ -68,13 +72,22 @@ GerstnerWaveModel& GerstnerWaveModel::operator=(GerstnerWaveModel const &model)
     return *this;
 }
 
-double GerstnerWaveModel::operator()(Dvector x, int t)
+Dvector GerstnerWaveModel::operator()(double t)
 {
-    double sum = 0;
-    for (int i = 0; i < size; i++) {
-        sum += listGerstnerWaves[i](x, t);
+    Dvector H = Dvector(nx*ny);
+    Dvector point = Dvector(2);
+    for (double x = 0; x < nx; x++) {
+        for (double y = 0; y < ny; y++) {
+            point.set(0, x*Lx/nx);
+            point.set(1, y*Ly/ny);
+            double sum = 0;
+            for (int i = 0; i < size; i++) {
+                sum += listGerstnerWaves[i](x, t);
+            }
+            H.set(x*ny + y, sum);
+        }
     }
-    return sum;
+    return H;
 }
 
 void GerstnerWaveModel::setWave(GerstnerWave wave, int index)
@@ -85,6 +98,12 @@ void GerstnerWaveModel::setWave(GerstnerWave wave, int index)
     }
     listGerstnerWaves[index] = wave;
 
+}
+
+void GerstnerWaveModel::setParams(double Lx, double Ly, int nx, int ny)
+{
+    Lx, Ly = Lx, Ly;
+    nx, ny = nx, ny;
 }
 
 void GerstnerWaveModel::setWave(int index, double A, double phi, Dvector* dir, double freq)

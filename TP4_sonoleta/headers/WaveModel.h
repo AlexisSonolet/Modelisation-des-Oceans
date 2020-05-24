@@ -20,6 +20,9 @@ class WaveModel
         virtual double getIntensity();
         virtual double getAverageWaveLength();
         virtual double getAjustWaveHeight();
+
+        // Get height
+        virtual Dvector operator()(double t) = 0;
     
     private:
         Dvector* windDirection;

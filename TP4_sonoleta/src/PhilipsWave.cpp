@@ -135,9 +135,16 @@ ComplexVector<complex<double>> PhilipsWave::get_height(double t)
     return height;
 }
 
-ComplexVector<complex<double>> PhilipsWave::operator()(double t)
+Dvector PhilipsWave::compute_h(double t)
 {
-    return PhilipsWave::get_height(t);
+	Dvector height = Dvector(N*M);
+    ComplexVector<complex<double>> h = PhilipsWave::get_height(t);
+	for (int n = 0; n < N; n++) {
+		for (int m = 0; m < M; m++) {
+			height.set(n*M + m, h.get(n*M + m).real());
+		}
+	}
+	return height;
 }
 
 void PhilipsWave::show_attributes()

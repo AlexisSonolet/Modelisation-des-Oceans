@@ -77,7 +77,7 @@ GerstnerWave GerstnerWave::operator=(GerstnerWave const &model)
     return *this;
 }
 
-double GerstnerWave::operator()(Dvector x, int t) 
+double GerstnerWave::operator()(Dvector x, double t) 
 {
     double z = amplitude * cos((*direction) * x - frequency*t + phase);
     return z;
