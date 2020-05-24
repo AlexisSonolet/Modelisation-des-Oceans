@@ -238,7 +238,7 @@ double Dvector::operator*(const Dvector &vector)
     }
     double value;
     for (int index = 0; index<v_size; index++) {
-        value += index, v[index] * vector.v[index];
+        value += v[index] * vector.v[index];
     }
     return value;
 }

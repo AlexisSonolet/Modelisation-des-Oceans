@@ -20,6 +20,9 @@ set(SRCS
     src/PhilipsWave.cpp
     src/FastFourier.cpp
     src/Ocean.cpp
+	test/test_fft.cpp
+	test/test_height.cpp
+	test/test_get_height.cpp
     )
 
 set(HEADERS
@@ -33,6 +36,7 @@ set(HEADERS
     headers/PhilipsWave.h
     headers/FastFourier.h
     headers/Ocean.h
+	test/test.h
     )
     
 add_executable(main ${SRCS} ${HEADERS})
