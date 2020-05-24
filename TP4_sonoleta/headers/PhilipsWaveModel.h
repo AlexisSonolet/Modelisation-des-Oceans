@@ -1,8 +1,10 @@
 #pragma once
 
-#include "Dvector.h"
 #include "WaveModel.h"
 #include "PhilipsWave.h"
+
+#include "ComplexVector.h"
+using Dvector = ComplexVector<double>;
 
 class PhilipsWaveModel:
     public WaveModel

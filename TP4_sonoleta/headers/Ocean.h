@@ -1,9 +1,10 @@
 #pragma once
 
 #include <iostream>
-
-#include "Dvector.h"
 #include "WaveModel.h"
+
+#include "ComplexVector.h"
+using Dvector = ComplexVector<double>;
 
 class Ocean
 {

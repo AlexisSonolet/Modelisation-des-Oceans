@@ -1,8 +1,10 @@
 #pragma once
 
-#include "Dvector.h"
 #include "GerstnerWave.h"
 #include "WaveModel.h"
+
+#include "ComplexVector.h"
+using Dvector = ComplexVector<double>;
 
 class GerstnerWaveModel:
     public WaveModel

@@ -44,7 +44,7 @@ PhilipsWave::PhilipsWave(double N, double M, double Lx, double Ly,
     double kx, ky;
     kx = 2 * M_PI * N / Lx;
     kx = 2 * M_PI * M / Ly;
-    this->dir = dir;
+    this->dir = new Dvector(*dir);
     this->xi_r = generate_xi();
 	this->xi_i = generate_xi(); 
     this->L = pow(V,2)/g;	

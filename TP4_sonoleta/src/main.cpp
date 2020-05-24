@@ -1,13 +1,15 @@
 #include <iostream>
-#include "./../headers/Dvector.h"
 #include "./../headers/Height.h"
-#include "./../headers/ComplexVector.h"
 #include "./../headers/FastFourier.h"
 #include "./../headers/PhilipsWave.h"
 #include "./../headers/PhilipsWaveModel.h"
 #include <complex>
 #include <typeinfo>
+
 using namespace std;
+
+#include "./../headers/ComplexVector.h"
+using Dvector = ComplexVector<double>;
 
 int main() {
 	cout << "Test IFFT croissant/decroissant" << endl;
@@ -30,7 +32,7 @@ int main() {
 	test_vague.show_attributes();
 	for(int t = 0; t < 4; t++){
 		ComplexVector<complex<double>> height = test_vague.get_height(t);
-		cout << "get_height "<< t<<endl<< height << endl;	
+		cout << "get_height "<< t << endl << height << endl;	
 	}
 	
 	//cout << test_croiss_decroiss << endl;

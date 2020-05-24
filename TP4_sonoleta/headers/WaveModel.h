@@ -1,6 +1,7 @@
 #pragma once
 
-#include "Dvector.h"
+#include "ComplexVector.h"
+using Dvector = ComplexVector<double>;
 
 class WaveModel
 {

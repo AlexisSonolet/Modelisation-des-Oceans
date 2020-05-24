@@ -17,7 +17,7 @@ class ComplexVector
 {
     public:
         ComplexVector();
-        ComplexVector(int size, T value = T(0,0));
+        ComplexVector(int size, T value = 0);
         ComplexVector(ComplexVector const& vect);
         ComplexVector(std::string fichier);
         ~ComplexVector();
@@ -358,9 +358,9 @@ T ComplexVector<T>::operator*(const ComplexVector &vector)
     if (v_size != vector.v_size) {
         throw string("Error : vectors of different sizes");
     }
-    T value;
+    T value = 0;
     for (int index = 0; index<v_size; index++) {
-        value += index, v[index] * vector.v[index];
+        value += v[index] * vector.v[index];
     }
     return value;
 }

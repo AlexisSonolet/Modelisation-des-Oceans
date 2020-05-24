@@ -1,14 +1,16 @@
 #pragma once
 
 #include <complex.h>
-#include "Dvector.h"
 #include "WaveModel.h"
 
 #include "GerstnerWave.h"
-#include "ComplexVector.h"
 #include "FastFourier.h"
 
 using namespace std;
+
+#include "ComplexVector.h"
+using Dvector = ComplexVector<double>;
+
 class PhilipsWave
 {
     public:
