@@ -36,7 +36,7 @@ class GerstnerWave
         GerstnerWave(GerstnerWave const &model);/*< Constructeur par recopie*/
         GerstnerWave operator=(GerstnerWave &&model);/*< Opérateur d'affectation par recopie*/
         GerstnerWave operator=(GerstnerWave const &model);
-        double operator()(Dvector x, int t);
+        double operator()(Dvector x, double t);
 
         // Setters & Getters
         double getAmplitude();
@@ -54,8 +54,7 @@ class GerstnerWave
         double frequency;/*< frequence de l'onde */
 };
 
-#define G 9.81 /*< definition de G la constante gravitationelle */
-#define W_TYPE 0 /*< type (entre 0 et 2) utilisé pour le type 3 de compute_freq*/
+#define W_TYPE 0 // type (entre 0 et 2) utilisé pour le type 3 de compute_freq
 
 /*!
 * \brief Calcule le module du vecteur d'onde

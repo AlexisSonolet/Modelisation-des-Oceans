@@ -67,15 +67,23 @@ void Ocean::generateHeight(double value)
     H = new Dvector(nx*ny, value);
 }
 
-void Ocean::compute(double t)
+void Ocean::compute(double dt)
 {
-    // TODO
-    // Ajouter une fonction get_height sur WaveModel...
+    t += dt;
+    *H = (*Model)(t);
 }
 
-Dvector* Ocean::gl_vertices()
+float* Ocean::getVertices()
 {
-    // TODO
+    float vert[3*nx*ny];
+    for (int x = 0; x < nx; x++) {
+        for (int y = 0; y < ny; y++) {
+            vert[3*(x*ny+y) + 0] = x*Lx/nx; // x
+            vert[3*(x*ny+y) + 1] = y*Ly/ny; // y
+            vert[3*(x*ny+y) + 2] = H->get(x*ny+y); // z
+        }
+    }
+    return vert;
 }
 
 void Ocean::plot(std::string path)

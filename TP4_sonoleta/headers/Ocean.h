@@ -39,25 +39,28 @@ class Ocean
         * Genere un océan avec la même hauteur value partout dans l'espace
         */
         void generateHeight(double value);
-        /*!
+
+		/*!
         * \brief Calcul hauteur
         * \ param t : le temps
         * Calcule le champ des hauteurs à un instant t
         */
-        void compute(double t);
-        /*!
+        void compute(double dt);
+		/*!
         * \brief Génération OpenGL
         */
-        Dvector* gl_vertices();
+        float* getVertices();
         void plot(std::string path);
 
     private:
         double Lx; /*<longueur du domaine dans la direction x*/
+
         double Ly; /*< longueur du domaine dans la direction y*/
         int nx; /*<nombre de points de discrétisation selon x*/
-        int ny; /*<nombre de points de discrétisation selon y*/
-        double t; /*<le temps courant*/
+
+        int ny;  /*<nombre de points de discrétisation selon y*/
+        double t;  /*<le temps courant*/
         Dvector* H; /*< vecteur contenant la hauteur de la houle*/
-        double*** vertices;/*<Les triangles modélisés par OpenGL*/
+        // double*** vertices;
         WaveModel* Model; /*<modèle utilisé*/
 };

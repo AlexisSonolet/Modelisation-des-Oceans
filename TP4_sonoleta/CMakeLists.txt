@@ -18,8 +18,8 @@ set(SRCS
     src/GerstnerWave.cpp
     src/PhilipsWaveModel.cpp
     src/PhilipsWave.cpp
-	#	src/ComplexVector.cpp
-	src/FastFourier.cpp
+    src/FastFourier.cpp
+    src/Ocean.cpp
 	test/test_fft.cpp
 	test/test_height.cpp
 	test/test_get_height.cpp
@@ -34,7 +34,8 @@ set(HEADERS
     headers/GerstnerWave.h
     headers/PhilipsWaveModel.h
     headers/PhilipsWave.h
-	headers/FastFourier.h
+    headers/FastFourier.h
+    headers/Ocean.h
 	test/test.h
     )
 

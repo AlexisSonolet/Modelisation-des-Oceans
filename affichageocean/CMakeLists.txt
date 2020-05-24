@@ -4,36 +4,47 @@ cmake_minimum_required(VERSION 3.13)
 
 project(AffichageOcean3D)
 
-if(WIN32)
-	set(DCMAKE_SH="CMAKE_SH-NOTFOUND")  # Trick pour compiler sur mon pc
-										# car sh.exe est dans le path à cause de l'installation
-										# de git bash
-endif()
-
 # Les options de compilation
 set(CMAKE_BUILD_TYPE Debug)
 set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -Wall -Werror -std=gnu11")
 set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall -Werror -std=gnu++11")
-
-if(WIN32)
-	#Définit le répertoire d'installation de glfw pour windows	(sur ma machine, à adapter suivant votre situation)
-	#pas besoin d'indiquer où chercher sur linux normalement
-	set(glfw3_DIR "C:/Program Files (x86)/GLFW/lib/cmake/glfw3")
-endif()
-
 
 find_package(glfw3 REQUIRED) # Cherche GLFW, échoue si la lib n'a pas pu être localisée sur le pc
 		
 set(LIBS ${LIBS} glfw)
 		
 # Les fichiers nécessaires à l'affichage graphique
-SET(RENDER src/rendering_glfw/main.cpp src/rendering_glfw/glad.c src/rendering_glfw/Window.cpp src/rendering_glfw/openglObjects.cpp src/rendering_glfw/OceanRenderer.cpp)
+SET(RENDER
+	src/rendering_glfw/main.cpp
+	src/rendering_glfw/glad.c
+	src/rendering_glfw/Window.cpp
+	src/rendering_glfw/openglObjects.cpp
+	src/rendering_glfw/OceanRenderer.cpp
+	)
 
 # Un fichier d'exemple de classe océan
-set(COMMON src/Ocean.cpp)
+set(COMMON
+	src/Ocean.cpp
+	src/FastFourier.cpp
+	src/WaveModel.cpp
+	src/GerstnerWave.cpp
+	src/GerstnerWaveModel.cpp
+	src/PhilipsWave.cpp
+	src/PhilipsWaveModel.cpp
+	)
+
+set(HEADERS
+	headers/Ocean.h
+	headers/FastFourier.h
+	headers/WaveModel.h
+	headers/GerstnerWave.h
+	headers/GerstnerWaveModel.h
+	headers/PhilipsWave.h
+	headers/PhilipsWaveModel.h
+	)
 
 # Le programme de visualisation 3D
-add_executable(Ocean3D ${RENDER} ${COMMON})
+add_executable(Ocean3D ${RENDER} ${COMMON} ${HEADERS})
 target_link_libraries(Ocean3D ${LIBS}) # Les libs à linker
 
 
