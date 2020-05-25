@@ -2,6 +2,10 @@
 
 Programme de modélisation de la surface des océans.
 
+## Vidéos de présentation :
+- https://youtu.be/BXRXe6bt0ZU
+- https://youtu.be/Bv-ZidwVG-Q
+
 ## Débug sur VSCode
 Dans `launch.json` :
 ```json
