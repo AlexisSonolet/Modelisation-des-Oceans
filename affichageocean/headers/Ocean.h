@@ -19,6 +19,10 @@ class Ocean
         void set_params(double Lx, double Ly, int nx, int ny);
         void set_model(WaveModel* Model);
 
+        // Getters
+        uint32_t getNx();
+		uint32_t getNy();
+
         // Méthodes spécifiques
         void generateHeight(double value);
         void compute(double dt);
@@ -31,7 +35,7 @@ class Ocean
         int nx; // nombre de points de discrétisation selon x
         int ny; // nombre de points de discrétisation selon y
         double t; // le temps courant
-        Dvector* H; // vecteur contenant la hauteur de la houle
+        Dvector H; // vecteur contenant la hauteur de la houle
         // double*** vertices;
         WaveModel* Model; // modèle utilisé
 };

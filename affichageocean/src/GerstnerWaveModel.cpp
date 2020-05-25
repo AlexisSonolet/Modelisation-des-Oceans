@@ -12,8 +12,10 @@ GerstnerWaveModel::GerstnerWaveModel()
 {
     listGerstnerWaves = new GerstnerWave[0];
     size = 0;
-    Lx, Ly = 1, 1;
-    nx, ny = 0, 0;
+    Lx = 1;
+    Ly = 1;
+    nx = 0;
+    ny = 0;
 }
 
 GerstnerWaveModel::~GerstnerWaveModel() 
@@ -28,8 +30,10 @@ GerstnerWaveModel::GerstnerWaveModel(int n, double Lx, double Ly, int nx, int ny
 {
     listGerstnerWaves = new GerstnerWave[n];
     size = n;
-    Lx, Ly = Lx, Ly;
-    nx, ny = nx, ny;
+    Lx = Lx;
+    Ly = Ly;
+    nx = nx;
+    ny = ny;
 }
 
 GerstnerWaveModel::GerstnerWaveModel(GerstnerWaveModel &&model)
@@ -72,7 +76,7 @@ GerstnerWaveModel& GerstnerWaveModel::operator=(GerstnerWaveModel const &model)
     return *this;
 }
 
-Dvector GerstnerWaveModel::operator()(double t)
+Dvector GerstnerWaveModel::get_waves_height(double t)
 {
     Dvector H = Dvector(nx*ny);
     Dvector point = Dvector(2);
@@ -100,10 +104,12 @@ void GerstnerWaveModel::setWave(GerstnerWave wave, int index)
 
 }
 
-void GerstnerWaveModel::setParams(double Lx, double Ly, int nx, int ny)
+void GerstnerWaveModel::setParams(double L_x, double L_y, int n_x, int n_y)
 {
-    Lx, Ly = Lx, Ly;
-    nx, ny = nx, ny;
+    Lx = L_x;
+    Ly = L_y;
+    nx = n_x;
+    ny = n_y;
 }
 
 void GerstnerWaveModel::setWave(int index, double A, double phi, Dvector* dir, double freq)

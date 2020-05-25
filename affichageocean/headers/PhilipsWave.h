@@ -17,8 +17,8 @@ class PhilipsWave
     // Méthodes principales
         PhilipsWave();
         ~PhilipsWave();
-        PhilipsWave(double N, double M, double Lx, double Ly, 
-                    double A, double w, double V, Dvector* dir);
+        PhilipsWave(int N, int M, double Lx, double Ly, 
+                    double A, double w, double V, Dvector dir);
         PhilipsWave(PhilipsWave &&model);
         PhilipsWave(PhilipsWave const &model);
         PhilipsWave operator=(PhilipsWave &&model);
@@ -39,10 +39,10 @@ class PhilipsWave
         double V;
         double w;
         double A;
-        Dvector* dir;
+        Dvector dir;
         double Lx, Ly;
         double xi_r, xi_i;
-		double N, M;
+		int N, M;
 };
 
 // ==== Autres fonctions utiles ====

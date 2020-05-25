@@ -19,7 +19,7 @@ class GerstnerWaveModel:
             GerstnerWaveModel& operator=(GerstnerWaveModel &&model);
             GerstnerWaveModel& operator=(GerstnerWaveModel const &model);
             // Utilitaires
-            Dvector operator()(double t);
+            Dvector get_waves_height(double t);
             void setWave(GerstnerWave wave, int index);
             void setWave(int index, double A, double phi, Dvector* dir, double freq);
             void setParams(double Lx, double Ly, int nx, int ny);

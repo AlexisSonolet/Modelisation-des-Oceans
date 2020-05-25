@@ -12,8 +12,8 @@ class PhilipsWaveModel:
         public:
             // Méthodes de base
             PhilipsWaveModel();
-            PhilipsWaveModel(double N, double M, double Lx, double Ly, 
-                             double A, double w, double V, Dvector* dir);
+            PhilipsWaveModel(int N, int M, double Lx, double Ly, 
+                             double A, double w, double V, Dvector dir);
             ~PhilipsWaveModel();
             PhilipsWaveModel(PhilipsWaveModel &&model);
             PhilipsWaveModel(PhilipsWaveModel const &model);
@@ -21,11 +21,22 @@ class PhilipsWaveModel:
             PhilipsWaveModel& operator=(PhilipsWaveModel const &model);
 
             // Méthodes utiles
-            ComplexVector<complex<double>> compute_h(double t);
+            double generate_xi();
+            ComplexVector<complex<double>> get_height(double t); 
 
             // Compute height
-			Dvector operator()(double t);
+            Dvector get_waves_height(double t);
+
+            // For debug
+            void show_attributes();
         
         private:
-            PhilipsWave* wave;
+            double L;
+            double V;
+            double w;
+            double A;
+            Dvector dir;
+            double Lx, Ly;
+            double xi_r, xi_i;
+            int N, M;
 };

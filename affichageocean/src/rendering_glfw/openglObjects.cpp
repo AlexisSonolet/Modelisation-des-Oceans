@@ -10,7 +10,7 @@
 #include <iostream>
 #include <stdlib.h>
 #include <stdio.h>
-#include <direct.h> //_getcwd for windows
+// #include <direct.h> //_getcwd for windows
 
 VAO::VAO() :
 		vbos() {
@@ -204,9 +204,8 @@ GLint Shader::loadFromFile(const char* filePath, GLuint programType) {
 		std::cerr << "Le fichier " << filePath << "est introuvable !"
 				<< std::endl;
 		char buff[1024];
-		_getcwd((char*) &buff, 1024); //current working directory
-		std::cerr << "Dernier emplacement cherché: " << buff << "\\" << filePath
-				<< std::endl;
+		//_getcwd((char*) &buff, 1024); //current working directory
+		//std::cerr << "Dernier emplacement cherché: " << buff << "\\" << filePath << std::endl;
 		exit(EXIT_FAILURE);
 	}
 

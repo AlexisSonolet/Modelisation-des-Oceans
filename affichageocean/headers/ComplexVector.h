@@ -32,12 +32,12 @@ class ComplexVector
 		ComplexVector get_even() const;
 		ComplexVector get_odd() const;
         void conjug();
-		ComplexVector operator=(const ComplexVector &vect);
-        ComplexVector operator+=(const ComplexVector &vect);
-        ComplexVector operator-=(const ComplexVector &vect);
-        ComplexVector operator*=(int i);
-        ComplexVector operator*=(const ComplexVector &vect);
-        ComplexVector operator/=(int i);
+		ComplexVector& operator=(const ComplexVector &vect);
+        ComplexVector& operator+=(const ComplexVector &vect);
+        ComplexVector& operator-=(const ComplexVector &vect);
+        ComplexVector& operator*=(int i);
+        ComplexVector& operator*=(const ComplexVector &vect);
+        ComplexVector& operator/=(int i);
         ComplexVector operator+(int i);
         ComplexVector operator-(int i);
         ComplexVector operator*(int i);
@@ -62,7 +62,7 @@ std::istream& operator>>(std::istream& in, ComplexVector<T>& v);
 
 // === Math constants ===
 #define g 9.81
-#define M_PI 3.14159265358979323846264338327950288
+// #define M_PI 3.14159265358979323846264338327950288
 
 template<typename T>
 ComplexVector<T>::ComplexVector()
@@ -253,19 +253,21 @@ void ComplexVector<T>::conjug()
 }
 
 template<typename T>
-ComplexVector<T> ComplexVector<T>::operator=(const ComplexVector &vect)
+ComplexVector<T>& ComplexVector<T>::operator=(const ComplexVector &vect)
 {
-    // Si le vecteur a déjà été assigné, il faut le libérer
-    delete[] v;
-    v_size = vect.v_size;
-    v = new T[v_size];
-    memcpy(v, vect.v, v_size * sizeof(T));
+    if (this != &vect) {
+        // Si le vecteur a déjà été assigné, il faut le libérer
+        delete[] v;
+        v_size = vect.v_size;
+        v = new T[v_size];
+        memcpy(v, vect.v, v_size * sizeof(T));
+    }
 
     return *this;
 }
 
 template<typename T>
-ComplexVector<T> ComplexVector<T>::operator+=(const ComplexVector &vect)
+ComplexVector<T>& ComplexVector<T>::operator+=(const ComplexVector &vect)
 {
     if (v_size != vect.v_size) {
         throw string("Error : vectors of different sizes");
@@ -277,7 +279,7 @@ ComplexVector<T> ComplexVector<T>::operator+=(const ComplexVector &vect)
 }
 
 template<typename T>
-ComplexVector<T> ComplexVector<T>::operator-=(const ComplexVector &vect)
+ComplexVector<T>& ComplexVector<T>::operator-=(const ComplexVector &vect)
 {
     if (v_size != vect.v_size) {
         throw string("Error : vectors of different sizes");
@@ -289,7 +291,7 @@ ComplexVector<T> ComplexVector<T>::operator-=(const ComplexVector &vect)
 }
 
 template<typename T>
-ComplexVector<T> ComplexVector<T>::operator*=(int i)
+ComplexVector<T>& ComplexVector<T>::operator*=(int i)
 {
     for (int index = 0; index<v_size; index++) {
         v[index] *= i;
@@ -298,7 +300,7 @@ ComplexVector<T> ComplexVector<T>::operator*=(int i)
 }
 
 template<typename T>
-ComplexVector<T> ComplexVector<T>::operator*=(const ComplexVector &vect)
+ComplexVector<T>& ComplexVector<T>::operator*=(const ComplexVector &vect)
 {
     if (v_size != vect.v_size) {
         throw string("Error : vectors of different sizes");
@@ -310,7 +312,7 @@ ComplexVector<T> ComplexVector<T>::operator*=(const ComplexVector &vect)
 }
 
 template<typename T>
-ComplexVector<T> ComplexVector<T>::operator/=(int i)
+ComplexVector<T>& ComplexVector<T>::operator/=(int i)
 {
     if (i == 0) {
         throw string("NullDivisionError : cannot divide by 0");

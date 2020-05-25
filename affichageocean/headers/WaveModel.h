@@ -11,21 +11,21 @@ class WaveModel
         virtual ~WaveModel() = 0;
         WaveModel(WaveModel &&model);
         WaveModel(WaveModel const &model);
-        virtual WaveModel& operator=(WaveModel &&model) = 0;
-        virtual WaveModel& operator=(WaveModel const &model) = 0;
+        // virtual WaveModel& operator=(WaveModel &&model);
+        // virtual WaveModel& operator=(WaveModel const &model);
         
         // Getters
-        virtual Dvector* getWindDir();
+        virtual Dvector getWindDir();
         virtual double getAverageMatching();
         virtual double getIntensity();
         virtual double getAverageWaveLength();
         virtual double getAjustWaveHeight();
 
         // Get height
-        virtual Dvector operator()(double t) = 0;
+        virtual Dvector get_waves_height(double t) = 0;
     
     private:
-        Dvector* windDirection;
+        Dvector windDirection;
         // Alignement moyen des vagues avec le vent
         double averageMatching;
         // Intensité (?!)

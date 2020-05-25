@@ -2,7 +2,7 @@
  * openglObjects.h
  *
  *  Created on: 28 mars 2019
- *      Author: Briac
+ *      OpenGL Template Author: Briac
  */
 
 #ifndef OPENGLOBJECTS_H_

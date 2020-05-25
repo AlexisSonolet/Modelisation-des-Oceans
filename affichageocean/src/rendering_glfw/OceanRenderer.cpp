@@ -10,7 +10,7 @@
 #include <math.h>
 
 OceanRenderer::OceanRenderer() :
-		shader("shaders/ocean.vs", "shaders/ocean.gs", "shaders/ocean.fs"), current_size(0), mesh_vao(
+		shader("../shaders/ocean.vs", "../shaders/ocean.gs", "../shaders/ocean.fs"), current_size(0), mesh_vao(
 		NULL) {
 
 	shader.bindVertexAttribute(0, "position");

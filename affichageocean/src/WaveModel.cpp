@@ -13,7 +13,7 @@ using namespace std;
 
 WaveModel::WaveModel()
 {
-    windDirection = new Dvector();
+    windDirection = Dvector();
     intensity = 0;
     averageMatching = 0;
     averageWaveLength = 0;
@@ -22,13 +22,11 @@ WaveModel::WaveModel()
 
 WaveModel::~WaveModel()
 {
-    delete windDirection;
 }
 
 WaveModel::WaveModel(WaveModel &&model)
 {
     windDirection = model.windDirection;
-    model.windDirection = nullptr;
 
     averageMatching = model.averageMatching;
     intensity = model.intensity;
@@ -38,7 +36,7 @@ WaveModel::WaveModel(WaveModel &&model)
 
 WaveModel::WaveModel(WaveModel const &model)
 {
-    windDirection = new Dvector(*model.windDirection);
+    windDirection = Dvector(model.windDirection);
 
     averageMatching = model.averageMatching;
     intensity = model.intensity;
@@ -49,7 +47,7 @@ WaveModel::WaveModel(WaveModel const &model)
 
 // === Getters ===
 
-Dvector* WaveModel::getWindDir() {
+Dvector WaveModel::getWindDir() {
     return windDirection;
 }
 

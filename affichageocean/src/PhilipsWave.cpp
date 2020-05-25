@@ -20,28 +20,27 @@ PhilipsWave::PhilipsWave()
     A = 0;
     Lx, Ly = 1, 1;
     xi_r, xi_i = 0, 0;
-    dir = new Dvector(2, 1);
+    dir = Dvector(2, 1);
 }
 
 PhilipsWave::~PhilipsWave()
 {
-    delete dir;
 }
 
-PhilipsWave::PhilipsWave(double N, double M, double Lx, double Ly, 
-                         double A, double w, double V, Dvector* dir)
+PhilipsWave::PhilipsWave(int N, int M, double Lx, double Ly, 
+                         double A, double w, double V, Dvector dir)
 {
     this->Lx = Lx;
 	this->Ly = Ly;
     this->N = N;
 	this->M = M;
-	this-> V = V;
-	this-> A = A;
-	this-> w = w;
+	this->V = V;
+	this->A = A;
+	this->w = w;
     double kx, ky;
     kx = 2 * M_PI * N / Lx;
     kx = 2 * M_PI * M / Ly;
-    this->dir = new Dvector(*dir);
+    this->dir = Dvector(dir);
     this->xi_r = generate_xi();
 	this->xi_i = generate_xi(); 
     this->L = pow(V,2)/g;	
@@ -50,39 +49,59 @@ PhilipsWave::PhilipsWave(double N, double M, double Lx, double Ly,
 PhilipsWave::PhilipsWave(PhilipsWave &&model)
 {
     dir = model.dir;
-    model.dir = nullptr;
-    L, V, w, A = model.L, model.V, model.w, model.A;
-    Lx, Ly = model.Lx, model.Ly;
-    xi_i, xi_r = model.xi_i, model.xi_r;
+	
+    L = model.L;
+	V = model.V;
+	w = model.w;
+	A = model.A;
+    Lx = model.Lx;
+	Ly = model.Ly;
+    xi_i = model.xi_i;
+	xi_r = model.xi_r;
 }
 
 PhilipsWave::PhilipsWave(PhilipsWave const &model)
 {
-    dir = new Dvector(*model.dir);
-    L, V, w, A = model.L, model.V, model.w, model.A;
-    Lx, Ly = model.Lx, model.Ly;
-    xi_i, xi_r = model.xi_i, model.xi_r;
+    dir = Dvector(model.dir);
+	
+    L = model.L;
+	V = model.V;
+	w = model.w;
+	A = model.A;
+    Lx = model.Lx;
+	Ly = model.Ly;
+    xi_i = model.xi_i;
+	xi_r = model.xi_r;
 }
 
 PhilipsWave PhilipsWave::operator=(PhilipsWave &&model)
 {
-    delete[] dir;
     dir = model.dir;
-    model.dir = nullptr;
-    L, V, w, A = model.L, model.V, model.w, model.A;
-    Lx, Ly = model.Lx, model.Ly;
-    xi_i, xi_r = model.xi_i, model.xi_r;
+    
+	L = model.L;
+	V = model.V;
+	w = model.w;
+	A = model.A;
+    Lx = model.Lx;
+	Ly = model.Ly;
+    xi_i = model.xi_i;
+	xi_r = model.xi_r;
 
     return *this;
 }
 
 PhilipsWave PhilipsWave::operator=(PhilipsWave const &model)
 {
-    delete[] dir;
-    dir = new Dvector(*model.dir);
-    L, V, w, A = model.L, model.V, model.w, model.A;
-    Lx, Ly = model.Lx, model.Ly;
-    xi_i, xi_r = model.xi_i, model.xi_r;
+    dir = Dvector(model.dir);
+    
+	L = model.L;
+	V = model.V;
+	w = model.w;
+	A = model.A;
+    Lx = model.Lx;
+	Ly = model.Ly;
+    xi_i = model.xi_i;
+	xi_r = model.xi_r;
 
     return *this;
 }
@@ -117,8 +136,8 @@ ComplexVector<complex<double>> PhilipsWave::get_height(double t)
 				i = sqrt(i);
 				double mod_k = sqrt(pow(k.get(0),2) + pow(k.get(1),2));
 				//pow(k*(*dir),2)
-				double Ph_k = (A * exp(-1/(pow(mod_k*L, 2))) / pow(mod_k, 2)) * pow(k.get(0)*(*dir).get(0) + k.get(1) * (*dir).get(1), 2);
-				double Pmh_k = (A * exp(-1/(pow(mod_k*L, 2))) / pow(mod_k, 2)) * pow(-k.get(0)*(*dir).get(0) - k.get(1)*(*dir).get(1), 2);
+				double Ph_k = (A * exp(-1/(pow(mod_k*L, 2))) / pow(mod_k, 2)) * pow(k.get(0)*(dir).get(0) + k.get(1) * (dir).get(1), 2);
+				double Pmh_k = (A * exp(-1/(pow(mod_k*L, 2))) / pow(mod_k, 2)) * pow(-k.get(0)*(dir).get(0) - k.get(1)*(dir).get(1), 2);
 				//complex<double> omega(0,0);
 				//omega.real(compute_freq(&k));
 				double omega = compute_freq(&k);
