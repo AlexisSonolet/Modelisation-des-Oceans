@@ -9,5 +9,5 @@ var searchData=
   ['get_5feven',['get_even',['../class_dvector.html#a8f274704d0c2ffe625a9f56d5729158b',1,'Dvector']]],
   ['get_5fodd',['get_odd',['../class_dvector.html#a190c6403a5318451b23ee276581c2618',1,'Dvector']]],
   ['get_5fv',['get_v',['../class_dvector.html#a100044e17131842814e0dee6c17e1ef7',1,'Dvector']]],
-  ['gl_5fvertices',['gl_vertices',['../class_ocean.html#aa9c06f386632f1fb33d61e35a3b17c28',1,'Ocean']]]
+  ['getvertices',['getVertices',['../class_ocean.html#a3ec7c06ebf4221145f22c3e52bba2b96',1,'Ocean']]]
 ];

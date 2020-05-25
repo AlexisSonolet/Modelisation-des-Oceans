@@ -11,8 +11,6 @@ set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall -Wextra -std=c++11")
 
 set(SRCS
     src/main.cpp
-    src/Dvector.cpp
-    src/Height.cpp
     src/WaveModel.cpp
     src/GerstnerWaveModel.cpp
     src/GerstnerWave.cpp
@@ -21,14 +19,11 @@ set(SRCS
     src/FastFourier.cpp
     src/Ocean.cpp
 	test/test_fft.cpp
-	test/test_height.cpp
 	test/test_get_height.cpp
     )
 
 set(HEADERS
-    headers/Dvector.h
 	headers/ComplexVector.h
-	headers/Height.h
     headers/WaveModel.h
     headers/GerstnerWaveModel.h
     headers/GerstnerWave.h
