@@ -8,7 +8,7 @@ class WaveModel
     public:
         // Méthodes de base
         WaveModel();
-        virtual ~WaveModel() = 0;
+        virtual ~WaveModel() = default;
         WaveModel(WaveModel &&model);
         WaveModel(WaveModel const &model);
         // virtual WaveModel& operator=(WaveModel &&model);

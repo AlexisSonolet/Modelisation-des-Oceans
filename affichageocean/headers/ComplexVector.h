@@ -21,6 +21,9 @@ class ComplexVector
         ComplexVector(ComplexVector const& vect);
         ComplexVector(std::string fichier);
         ~ComplexVector();
+        ComplexVector(ComplexVector<T> &&vect);
+        ComplexVector operator=(ComplexVector &&vect);
+
         void display(std::ostream& str);
         int size() const;
         void fillRandomly();
@@ -67,7 +70,7 @@ std::istream& operator>>(std::istream& in, ComplexVector<T>& v);
 template<typename T>
 ComplexVector<T>::ComplexVector()
 {
-    v = new T[0]; // v vecteur de taille définie
+    v = nullptr; // v vecteur de taille définie
     v_size = 0;
 };
 
@@ -82,11 +85,12 @@ ComplexVector<T>::ComplexVector(int size, T value)
 
 template<typename T>
 ComplexVector<T>::ComplexVector(ComplexVector const& vect)
-{
+{ 
+    // delete v;
     v = new T[vect.v_size];
     v_size = vect.v_size;
     for (int i = 0; i < vect.v_size; i++)
-        v[i] = *(vect.v + i);
+        v[i] = vect.v[i];
 };
 
 template<typename T>
@@ -147,8 +151,35 @@ ComplexVector<T>::ComplexVector(string fichier)
 template<typename T>
 ComplexVector<T>::~ComplexVector()
 {
-    delete[] v;
+    if (v != nullptr) {
+        delete[] v;
+    }
 };
+
+template<typename T>
+ComplexVector<T>::ComplexVector(ComplexVector<T> &&vect)
+{
+    v_size = vect.v_size;
+    v = vect.v;
+
+    vect.v_size = 0;
+    vect.v = nullptr;
+}
+
+template<typename T>
+ComplexVector<T> ComplexVector<T>::operator=(ComplexVector<T> &&vect)
+{
+    if (this != &vect) {
+        delete[] v;
+        v_size = vect.v_size;
+        v = vect.v;
+
+        vect.v_size = 0;
+        vect.v = nullptr;
+    }
+
+    return *this;
+}
 
 template<typename T>
 void ComplexVector<T>::display(ostream& str)

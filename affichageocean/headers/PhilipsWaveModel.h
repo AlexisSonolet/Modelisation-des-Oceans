@@ -14,14 +14,8 @@ class PhilipsWaveModel:
     {
         public:
             // Méthodes de base
-            PhilipsWaveModel();
             PhilipsWaveModel(int N, int M, double Lx, double Ly, 
                              double A, double w, double V, Dvector dir);
-            ~PhilipsWaveModel();
-            PhilipsWaveModel(PhilipsWaveModel &&model);
-            PhilipsWaveModel(PhilipsWaveModel const &model);
-            PhilipsWaveModel& operator=(PhilipsWaveModel &&model);
-            PhilipsWaveModel& operator=(PhilipsWaveModel const &model);
 
             // Méthodes utiles
             double generate_xi();

@@ -61,8 +61,8 @@ void OceanRenderer::draw(float* vertices, uint32_t nx, uint32_t ny, mat4x4 view,
 	mesh_vao->bind();
 	mesh_vao->bindAttribute(0);
 
-	glEnable(GL_CULL_FACE);
-	glCullFace(GL_BACK);
+	// glEnable(GL_CULL_FACE);
+	// glCullFace(GL_BACK);
 	glEnable(GL_DEPTH_TEST);
 
 	glDrawElements(GL_TRIANGLES, mesh_vao->getIndexCount(), GL_UNSIGNED_INT,

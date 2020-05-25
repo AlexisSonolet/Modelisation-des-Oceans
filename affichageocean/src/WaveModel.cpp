@@ -13,15 +13,11 @@ using namespace std;
 
 WaveModel::WaveModel()
 {
-    windDirection = Dvector();
+    // windDirection = Dvector();
     intensity = 0;
     averageMatching = 0;
     averageWaveLength = 0;
     ajustWaveHeight = 0;
-}
-
-WaveModel::~WaveModel()
-{
 }
 
 WaveModel::WaveModel(WaveModel &&model)

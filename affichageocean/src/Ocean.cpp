@@ -20,6 +20,7 @@ Ocean::Ocean()
     t = 0;
     H = Dvector();
     Model = nullptr;
+    vert = nullptr;
 }
 
 Ocean::Ocean(double Lx, double Ly, int nx, int ny, WaveModel* Model) :
@@ -29,7 +30,8 @@ Ocean::Ocean(double Lx, double Ly, int nx, int ny, WaveModel* Model) :
     ny{ny},
     Model{Model},
     t{0},
-    H{Dvector(nx*ny)}
+    H{Dvector(nx*ny)},
+    vert{new float[3*nx*ny]}
 {
 }
 
@@ -44,16 +46,6 @@ Ocean::~Ocean()
 void Ocean::set_t(double t)
 {
     t = t;
-}
-
-void Ocean::set_params(double lx, double ly, int N, int M)
-{
-    Lx = lx;
-    Ly = ly;
-    nx = N;
-    ny = M;
-
-    H = Dvector(nx*ny);
 }
 
 void Ocean::set_model(WaveModel* WModel)
@@ -91,7 +83,6 @@ void Ocean::compute(double dt)
 
 float* Ocean::getVertices()
 {
-    float vert[3*nx*ny];
     for (int x = 0; x < nx; x++) {
         for (int y = 0; y < ny; y++) {
             vert[3*(x*ny+y) + 0] = x*Lx/nx; // x

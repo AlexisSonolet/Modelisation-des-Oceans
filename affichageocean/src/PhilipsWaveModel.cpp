@@ -12,17 +12,6 @@ using namespace std;
 
 // === Méthodes de base ===
 
-PhilipsWaveModel::PhilipsWaveModel()
-{
-    L = 0;
-    V = 0;
-    w = 0;
-    A = 0;
-    Lx, Ly = 1, 1;
-    xi_r, xi_i = 0, 0;
-    dir = Dvector(2, 1);
-}
-
 PhilipsWaveModel::PhilipsWaveModel(int N, int M, double Lx, double Ly, 
                                    double A, double w, double V, Dvector dir)
 {
@@ -35,75 +24,12 @@ PhilipsWaveModel::PhilipsWaveModel(int N, int M, double Lx, double Ly,
 	this->w = w;
     double kx, ky;
     kx = 2 * M_PI * N / Lx;
-    kx = 2 * M_PI * M / Ly;
-    this->dir = Dvector(dir);
+    ky = 2 * M_PI * M / Ly;
+    this->dir = dir;
     this->xi_r = generate_xi();
 	this->xi_i = generate_xi(); 
     this->L = pow(V,2)/g;
 }
-
-PhilipsWaveModel::~PhilipsWaveModel() {}
-
-PhilipsWaveModel::PhilipsWaveModel(PhilipsWaveModel &&model)
-{
-    dir = model.dir;
-	
-    L = model.L;
-	V = model.V;
-	w = model.w;
-	A = model.A;
-    Lx = model.Lx;
-	Ly = model.Ly;
-    xi_i = model.xi_i;
-	xi_r = model.xi_r;
-}
-
-PhilipsWaveModel::PhilipsWaveModel(PhilipsWaveModel const &model)
-{
-    dir = Dvector(model.dir);
-	
-    L = model.L;
-	V = model.V;
-	w = model.w;
-	A = model.A;
-    Lx = model.Lx;
-	Ly = model.Ly;
-    xi_i = model.xi_i;
-	xi_r = model.xi_r;
-}
-
-PhilipsWaveModel& PhilipsWaveModel::operator=(PhilipsWaveModel &&model)
-{
-    dir = model.dir;
-    
-	L = model.L;
-	V = model.V;
-	w = model.w;
-	A = model.A;
-    Lx = model.Lx;
-	Ly = model.Ly;
-    xi_i = model.xi_i;
-	xi_r = model.xi_r;
-
-    return *this;
-}
-
-PhilipsWaveModel& PhilipsWaveModel::operator=(PhilipsWaveModel const &model)
-{
-    dir = Dvector(model.dir);
-    
-	L = model.L;
-	V = model.V;
-	w = model.w;
-	A = model.A;
-    Lx = model.Lx;
-	Ly = model.Ly;
-    xi_i = model.xi_i;
-	xi_r = model.xi_r;
-
-    return *this;
-}
-
 
 // === Méthodes utiles ===
 
