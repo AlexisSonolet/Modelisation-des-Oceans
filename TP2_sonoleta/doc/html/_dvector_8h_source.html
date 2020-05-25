@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TP2:  Fichier source de /home/louis/Documents/2A/MPC/CPP/TP2_sonoleta/src/Dvector.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">TP2
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_8f465d9819f072791114ffb3afeb02da.html">TP2_sonoleta</a></li><li class="navelem"><a class="el" href="dir_1994a16c356a4b837b191b7585ad546f.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Dvector.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_dvector_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div><div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_dvector.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_dvector.html">Dvector</a></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    public :</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <a class="code" href="class_dvector.html#adf0f620df0feef3311f7d198e649a298">Dvector</a>();</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="class_dvector.html#adf0f620df0feef3311f7d198e649a298">Dvector</a>(<span class="keywordtype">int</span> <a class="code" href="class_dvector.html#adda9654f389de24c744e897e93f850fb">size</a>, <span class="keywordtype">int</span> value=0);</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="class_dvector.html#adf0f620df0feef3311f7d198e649a298">Dvector</a>(<a class="code" href="class_dvector.html">Dvector</a> <span class="keyword">const</span>&amp; vect);</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="class_dvector.html#adf0f620df0feef3311f7d198e649a298">Dvector</a>(std::string fichier);</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <a class="code" href="class_dvector.html#a3156d0776c5da1a15685970200ec6b96">~Dvector</a>();</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                  <span class="comment">/*</span></div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">         * \brief Affichage</span></div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">         * \param str : flux dans lequel afficher l&#39;objet Dvector</span></div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">         * Fonction d&#39;affichage</span></div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">         */</span></div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordtype">void</span> display(std::ostream&amp; str);</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_dvector.html#adda9654f389de24c744e897e93f850fb">size</a>() <span class="keyword">const</span>;</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_dvector.html#a6fecdca0fbad7f928403597e322234b1">fillRandomly</a>();</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordtype">double</span> <span class="keyword">get</span>(<span class="keywordtype">int</span> index) <span class="keyword">const</span>;</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                <span class="keywordtype">double</span> &amp; <a class="code" href="class_dvector.html#a237ba8b1ca7e68f78ec3f85ae800cbec">operator()</a>(<span class="keywordtype">int</span> i) <span class="keyword">const</span>;</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordtype">void</span> <span class="keyword">set</span>(<span class="keywordtype">int</span> index, <span class="keywordtype">double</span> value);</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_dvector.html#a5d4b7a3273803031a7fb2b5516e5dd11">set_size</a>(<span class="keywordtype">int</span> size);</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_dvector.html#a99c6f3bc6f2d285ec2f9d8bd32a32218">set_v</a>(<span class="keywordtype">double</span>* vect);</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordtype">double</span>* <a class="code" href="class_dvector.html#a100044e17131842814e0dee6c17e1ef7">get_v</a>() <span class="keyword">const</span>;</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                <span class="comment">// Les opérateurs</span></div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <a class="code" href="class_dvector.html">Dvector</a> operator=(<span class="keyword">const</span> <a class="code" href="class_dvector.html">Dvector</a> &amp;vect);</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                <a class="code" href="class_dvector.html">Dvector</a> assign(<span class="keyword">const</span> <a class="code" href="class_dvector.html">Dvector</a> &amp;vect);</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <a class="code" href="class_dvector.html">Dvector</a> operator+=(<span class="keyword">const</span> <a class="code" href="class_dvector.html">Dvector</a> &amp;vect);</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <a class="code" href="class_dvector.html">Dvector</a> operator-=(<span class="keyword">const</span> <a class="code" href="class_dvector.html">Dvector</a> &amp;vect);</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <a class="code" href="class_dvector.html">Dvector</a> operator*=(<span class="keywordtype">int</span> i);</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <a class="code" href="class_dvector.html">Dvector</a> operator/=(<span class="keywordtype">int</span> i);</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <a class="code" href="class_dvector.html">Dvector</a> operator+(<span class="keywordtype">int</span> i);</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <a class="code" href="class_dvector.html">Dvector</a> operator-(<span class="keywordtype">int</span> i);</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <a class="code" href="class_dvector.html">Dvector</a> operator*(<span class="keywordtype">int</span> i);</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <a class="code" href="class_dvector.html">Dvector</a> operator/(<span class="keywordtype">int</span> i);</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <a class="code" href="class_dvector.html">Dvector</a> operator+(<a class="code" href="class_dvector.html">Dvector</a> &amp;vect);</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <a class="code" href="class_dvector.html">Dvector</a> operator-(<a class="code" href="class_dvector.html">Dvector</a> &amp;vect);</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <a class="code" href="class_dvector.html">Dvector</a> operator-();</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> <a class="code" href="class_dvector.html">Dvector</a> &amp;vect);</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_dvector.html#a3df83649e0ed9cf7c21fe03fdef8b2f4">resize</a>(<span class="keywordtype">int</span> size, <span class="keywordtype">double</span>* vect = 0);</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keyword">private</span>:</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordtype">double</span>* v;  <span class="comment">/*&lt; Liste des éléments du vecteur */</span></div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordtype">int</span> v_size; <span class="comment">/*&lt; Taille du vecteur */</span></div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;};</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;std::ostream&amp; operator&lt;&lt;(std::ostream&amp; out, <span class="keyword">const</span> <a class="code" href="class_dvector.html">Dvector</a>&amp; v);</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;std::istream&amp; operator&gt;&gt;(std::istream&amp; in, <a class="code" href="class_dvector.html">Dvector</a>&amp; v);</div><div class="ttc" id="class_dvector_html_a3df83649e0ed9cf7c21fe03fdef8b2f4"><div class="ttname"><a href="class_dvector.html#a3df83649e0ed9cf7c21fe03fdef8b2f4">Dvector::resize</a></div><div class="ttdeci">void resize(int size, double *vect=0)</div><div class="ttdoc">Changer la taille et insérer de nouvelles valeurs en queue. </div><div class="ttdef"><b>Definition:</b> Dvector.cpp:318</div></div>
+<div class="ttc" id="class_dvector_html_adf0f620df0feef3311f7d198e649a298"><div class="ttname"><a href="class_dvector.html#adf0f620df0feef3311f7d198e649a298">Dvector::Dvector</a></div><div class="ttdeci">Dvector()</div><div class="ttdoc">Constructeur par défault. </div><div class="ttdef"><b>Definition:</b> Dvector.cpp:9</div></div>
+<div class="ttc" id="class_dvector_html_a3156d0776c5da1a15685970200ec6b96"><div class="ttname"><a href="class_dvector.html#a3156d0776c5da1a15685970200ec6b96">Dvector::~Dvector</a></div><div class="ttdeci">~Dvector()</div><div class="ttdoc">Destructeur Destructeur de la classe Dvector. </div><div class="ttdef"><b>Definition:</b> Dvector.cpp:72</div></div>
+<div class="ttc" id="class_dvector_html_a100044e17131842814e0dee6c17e1ef7"><div class="ttname"><a href="class_dvector.html#a100044e17131842814e0dee6c17e1ef7">Dvector::get_v</a></div><div class="ttdeci">double * get_v() const</div><div class="ttdoc">getter de l&amp;#39;ensemble des éléments </div><div class="ttdef"><b>Definition:</b> Dvector.cpp:136</div></div>
+<div class="ttc" id="class_dvector_html"><div class="ttname"><a href="class_dvector.html">Dvector</a></div><div class="ttdef"><b>Definition:</b> Dvector.h:12</div></div>
+<div class="ttc" id="class_dvector_html_adda9654f389de24c744e897e93f850fb"><div class="ttname"><a href="class_dvector.html#adda9654f389de24c744e897e93f850fb">Dvector::size</a></div><div class="ttdeci">int size() const</div><div class="ttdoc">Taille du vecteur. </div><div class="ttdef"><b>Definition:</b> Dvector.cpp:84</div></div>
+<div class="ttc" id="class_dvector_html_a6fecdca0fbad7f928403597e322234b1"><div class="ttname"><a href="class_dvector.html#a6fecdca0fbad7f928403597e322234b1">Dvector::fillRandomly</a></div><div class="ttdeci">void fillRandomly()</div><div class="ttdef"><b>Definition:</b> Dvector.cpp:89</div></div>
+<div class="ttc" id="class_dvector_html_a99c6f3bc6f2d285ec2f9d8bd32a32218"><div class="ttname"><a href="class_dvector.html#a99c6f3bc6f2d285ec2f9d8bd32a32218">Dvector::set_v</a></div><div class="ttdeci">void set_v(double *vect)</div><div class="ttdoc">changer tout les éléments du vecteurs </div><div class="ttdef"><b>Definition:</b> Dvector.cpp:131</div></div>
+<div class="ttc" id="class_dvector_html_a237ba8b1ca7e68f78ec3f85ae800cbec"><div class="ttname"><a href="class_dvector.html#a237ba8b1ca7e68f78ec3f85ae800cbec">Dvector::operator()</a></div><div class="ttdeci">double &amp; operator()(int i) const</div><div class="ttdoc">getter/setter </div><div class="ttdef"><b>Definition:</b> Dvector.cpp:107</div></div>
+<div class="ttc" id="class_dvector_html_a5d4b7a3273803031a7fb2b5516e5dd11"><div class="ttname"><a href="class_dvector.html#a5d4b7a3273803031a7fb2b5516e5dd11">Dvector::set_size</a></div><div class="ttdeci">void set_size(int size)</div><div class="ttdoc">changer la taille </div><div class="ttdef"><b>Definition:</b> Dvector.cpp:126</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

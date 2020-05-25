@@ -3,7 +3,11 @@
 #include "Dvector.h"
 #include "GerstnerWave.h"
 #include "WaveModel.h"
-
+/*!
+ * \file GerstnerWaveModel.h
+ * Classe du modèle des vagues de Gerstner, sert à stocker une liste de vagues
+ *
+ */
 class GerstnerWaveModel:
     public WaveModel
     {
@@ -18,6 +22,6 @@ class GerstnerWaveModel:
             GerstnerWaveModel& operator=(GerstnerWaveModel const &model);
             void setGerstnerWave(int i, GerstnerWave wave);
         private:
-            GerstnerWave* listGerstnerWaves;
+            GerstnerWave* listGerstnerWaves; /*< Liste des vagues */
             int size;
     };
