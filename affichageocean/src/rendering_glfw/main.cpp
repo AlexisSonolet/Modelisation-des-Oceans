@@ -29,7 +29,7 @@ int main(void) {
 	dir.set(0, 1); // DIrection du vent
 	dir.set(1, 1); // DIrection du vent
 
-	PhilipsWaveModel wave(N, M, Lx, Ly, A, om, V, &dir);
+	PhilipsWaveModel wave(N, M, Lx, Ly, A, om, V, dir);
 	Ocean ocean(Lx, Ly, N, M, &wave);
 
 	w.mainloop(&ocean);

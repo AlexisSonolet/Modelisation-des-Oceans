@@ -6,7 +6,6 @@
 #include <tgmath.h>
 #include <random>
 #include <cmath>
-#include <complex>
 #include "./../headers/PhilipsWaveModel.h"
 using namespace std;
 
@@ -43,7 +42,7 @@ PhilipsWaveModel::PhilipsWaveModel(int N, int M, double Lx, double Ly,
     this->L = pow(V,2)/g;
 }
 
-PhilipsWave::~PhilipsWave() {}
+PhilipsWaveModel::~PhilipsWaveModel() {}
 
 PhilipsWaveModel::PhilipsWaveModel(PhilipsWaveModel &&model)
 {
@@ -139,7 +138,7 @@ ComplexVector<complex<double>> PhilipsWaveModel::get_height(double t)
 				double Pmh_k = (A * exp(-1/(pow(mod_k*L, 2))) / pow(mod_k, 2)) * pow(-k.get(0)*(dir).get(0) - k.get(1)*(dir).get(1), 2);
 				//complex<double> omega(0,0);
 				//omega.real(compute_freq(&k));
-				double omega = compute_freq(&k);
+				double omega = compute_freq(k);
 				complex<double> height_1 = sqrt(Ph_k/2)*((xi_r + i*xi_i)) * exp(i*omega*(double)t);
 				complex<double> height_2 = sqrt(Pmh_k/2)*((xi_r - i*xi_i)) * exp(-i*omega*(double)t);
 				//height_1 *= ((xi_r + i*xi_i)) * exp(i*omega*t);
@@ -182,4 +181,54 @@ void PhilipsWaveModel::show_attributes()
 	cout << "xi_i :"<< xi_i << endl;
 	cout << "N :"<< N << endl;
 	cout << "M :"<<M<<endl;
+}
+
+
+// === Autres fonctions ===
+
+double module(Dvector dir)
+{
+    return sqrt(dir * dir);
+}
+
+/**
+ * Renvoie la fréquence en fonction de plusieurs paramètres
+ * @param dir : vecteur d'ondes
+ * @param type :
+ *      0 : cas de la houle
+ *      1 : eau peu profonde
+ *      2 : avec la tension de surface
+ *      3 : NaNi
+ * @param D : distance du sol au niveau moyen
+ * @param L : tension de surface (?)
+ * @param T : période de répétition des variations de hauteur
+ */
+double compute_freq(Dvector dir, int type, double D, double L, double T)
+{
+    double k = module(dir);
+    double w, w_0;
+    switch (type)
+    {
+        case 0:
+            w = sqrt(g * k);
+            break;
+        case 1:
+            w = sqrt(g * k * tanh(k * D));
+            break;
+        case 2:
+            w = sqrt(g * k * (1 + k*k*L*L));
+            break;
+        case 3:
+            if (W_TYPE == 3) {
+                cout << "ERREUR : W_TYPE ne peut pas être égal à 3 (récursion infinie)" << endl;
+                exit(EXIT_FAILURE);
+            }
+            w_0 = 2 * M_PI / T;
+            w = ((int) (compute_freq(dir, W_TYPE, D, L, T) / w_0)) * w_0;
+            break;
+        default:
+            cout << "ERREUR : type de fréquence inconnue" << endl;
+            exit(EXIT_FAILURE);
+    }
+    return w;
 }

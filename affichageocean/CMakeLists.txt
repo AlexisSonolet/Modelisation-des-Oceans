@@ -31,7 +31,6 @@ set(COMMON
 	src/WaveModel.cpp
 	src/GerstnerWave.cpp
 	src/GerstnerWaveModel.cpp
-	src/PhilipsWave.cpp
 	src/PhilipsWaveModel.cpp
 	)
 
@@ -41,7 +40,6 @@ set(HEADERS
 	headers/WaveModel.h
 	headers/GerstnerWave.h
 	headers/GerstnerWaveModel.h
-	headers/PhilipsWave.h
 	headers/PhilipsWaveModel.h
 	)
 
