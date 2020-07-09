@@ -1,4 +1,4 @@
-# Modélisation & C++
+# Modélisation des Océans (Projet CPP)
 
 Programme de modélisation de la surface des océans.
 
